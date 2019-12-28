@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
   <head>
-    <title>{{env('APP_NAME','FloraSyria')}}</title>
+    <title>{{env('APP_NAME','FloraSyria')}} | </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -29,13 +29,13 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="#" class="nav-link pl-0">الرئيسية</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">النباتات في سورية</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">المؤسس</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">فريق العمل</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">المنشورات</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">بحث متقدم</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">الاتصال بنا</a></li>
+	        	<li class="nav-item {{ Request::path()=='/' ? 'active' : ''}}"><a href="/" class="nav-link pl-0">الرئيسية</a></li>
+	        	<li class="nav-item {{ Request::path()=='syria' ? 'active' : ''}}"><a href="#" class="nav-link"> عن سورية</a></li>
+	        	<li class="nav-item {{ Request::path()=='about' ? 'active' : ''}}"><a href="/about" class="nav-link">المؤسس</a></li>
+            <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="/team" class="nav-link">فريق العمل</a></li>
+            <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="/publications" class="nav-link">المنشورات</a></li>
+	        	<li class="nav-item {{ Request::path()=='search' ? 'active' : ''}}"><a href="#" class="nav-link">بحث متقدم</a></li>
+	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="#" class="nav-link">الاتصال بنا</a></li>
 	        </ul>
 	      </div>
 	    </div>

@@ -1,0 +1,52 @@
+@extends('pages.layout')
+    @section('content')
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+              <h1 class="mt-2 bread">Publications</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="col-md-12 ftco-animate">
+                <h2 class="mb-4">المقالات المنشورة</h2>
+                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+                    إذا كنت تحتاج إلى عدد أكبر</p>
+                </div> <br>
+                <div class="col-md-10 offset-md-2 ftco-animate">
+                @for ($i = 0; $i < 4; $i++)
+              <!-- Card No1-->
+              <a href="#" class="card mt-4">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-4 col-sm-6">
+                              <img src="{{asset('images/attachement.png')}}" alt="" class=" float-left" width="100px">
+                          </div>
+                          <div class="col-md-8 col-sm-6">
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <h5 class="card-title blue float-right mr-0 mt-0">اسم المقال</h5>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <p class="mb-0 pb-0">هذا النص هو مثال لنص يمكن أن يستبدل في نفس </p>
+                                      <p class="blockquote-footer"> 12/10/2019</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+              <!-- End Card No1-->
+              @endfor
+              </div>
+        </div>
+    </section>
+    @endsection

@@ -8400,6 +8400,7 @@ h1, h2, h3, h4, h5,
   padding: 0;
   line-height: 1; }
 
+
 .hero-wrap {
   width: 100%;
   height: 100%;
@@ -8425,8 +8426,24 @@ h1, h2, h3, h4, h5,
     background: -webkit-gradient(linear, left top, right top, from(#1566ad), to(#1b9de3));
     background: linear-gradient(to right, #1566ad 0%, #1b9de3 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1566ad', endColorstr='#1b9de3', GradientType=1 ); }
-
-
+  
+  .hero-wrap.hero-wrap-2 {
+    height: 300px; }
+    .hero-wrap.hero-wrap-2 .slider-text {
+      height: 300px; }
+      .hero-wrap.hero-wrap-2 .slider-text .bread {
+        font-weight: 900;
+        color: #fff; }
+      .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1px; }
+        .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span {
+          color: #fff;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
+          .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span a {
+            color: #fff; }
+            
 .owl-carousel {
   position: relative; }
   .owl-carousel .owl-item {
@@ -8857,7 +8874,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 14px;
   background: #232323;
-  padding: 6em 0; }
+  padding: 2em 0; }
   .ftco-footer .ftco-footer-widget {
     width: 100%;
     display: block; }
@@ -9045,9 +9062,75 @@ textarea.form-control {
 .img,
 .blog-img,
 .user-img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; }
+  max-width: 200px;
+  max-height: 200px;
+   }
+
+  .howtohelp-section {
+    background-color: aliceblue;
+    position: relative; }
+    .howtohelp-section .owl-carousel {
+      margin: 0; }
+    .howtohelp-section .owl-carousel .owl-stage-outer {
+      padding-top: 4em;
+      padding-bottom: 2em;
+      position: relative; }
+    .howtohelp-section .owl-nav {
+      position: absolute;
+      top: 100%;
+      width: 100%; }
+      .howtohelp-section .owl-nav .owl-prev,
+      .howtohelp-section .owl-nav .owl-next {
+        position: absolute;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        margin-top: -10px;
+        outline: none !important;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        opacity: 0; }
+        .howtohelp-section .owl-nav .owl-prev span:before,
+        .howtohelp-section .owl-nav .owl-next span:before {
+          font-size: 30px;
+          color: rgba(0, 0, 0, 0.2);
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
+          -ms-transition: all 0.3s ease;
+          transition: all 0.3s ease; }
+        .howtohelp-section .owl-nav .owl-prev:hover span:before, .howtohelp-section .owl-nav .owl-prev:focus span:before,
+        .howtohelp-section .owl-nav .owl-next:hover span:before,
+        .howtohelp-section .owl-nav .owl-next:focus span:before {
+          color: #000000; }
+      .howtohelp-section .owl-nav .owl-prev {
+        left: 50%;
+        margin-left: -80px; }
+      .howtohelp-section .owl-nav .owl-next {
+        right: 50%;
+        margin-right: -80px; }
+    .howtohelp-section:hover .owl-nav .owl-prev,
+    .howtohelp-section:hover .owl-nav .owl-next {
+      opacity: 1; }
+    .howtohelp-section:hover .owl-nav .owl-prev {
+      left: 50%;
+      margin-left: -80px; }
+    .howtohelp-section:hover .owl-nav .owl-next {
+      right: 50%;
+      margin-right: -80px; }
+    .howtohelp-section .owl-dots {
+      text-align: center; }
+      .howtohelp-section .owl-dots .owl-dot {
+        width: 10px;
+        height: 10px;
+        margin: 5px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.2); }
+        .howtohelp-section .owl-dots .owl-dot.active {
+          background: #1b9ce3; }
 
 .testimony-section {
   position: relative; }
@@ -9669,8 +9752,9 @@ textarea.form-control {
 
     /* Cadrs */
     .card {
-      border-bottom: 3px #59CA75 solid;
+      /* border-bottom: 3px #59CA75 solid; */
       transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+      background-color: #f0f9fd;
   }
   
   .card:hover {
