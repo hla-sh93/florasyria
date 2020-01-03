@@ -26,3 +26,31 @@ Route::get('/team', function () {
 Route::get('/publications', function () {
     return view('publications');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/advsearch', function () {
+    return view('advsearch');
+});
+
+Route::get('/topography', function () {
+    return view('topography');
+});
+
+Route::get('/soil', function () {
+    return view('soil');
+});
+
+Route::get('/planetBio', function () {
+    return view('planetBio');
+});
+
+Route::get('/flora', function () {
+    return view('flora');
+});
+
+Route::get('/details', function () {
+    return view('details');
+});

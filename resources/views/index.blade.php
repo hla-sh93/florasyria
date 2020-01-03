@@ -23,7 +23,7 @@
 							<div class="text">
 								<h3>Pistacia palaestina</h3>
 								<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخ</p>
-								<p><a href="#" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
+								<p><a href="/details" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
 							</div>
 						</div>
 					</div>
@@ -31,11 +31,11 @@
 					  <h2 class="mb-4">Flowering Now</h2>
 					  @for ($i = 0; $i < 3; $i++)
                     <!-- Card No1-->
-                    <a href="#" class="card mt-4">
+                    <a href="/details" class="card mt-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-6">
-                                    <img src="{{asset('images/anabasis syriaca.jpg')}}" alt="" class=" float-left" width="100px">
+                                    <img src="{{asset('images/anabasis syriaca.jpg')}}" alt="" class=" float-right" width="100px">
                                 </div>
                                 <div class="col-md-8 col-sm-6">
                                     <div class="row">
@@ -58,62 +58,22 @@
 				</div>
 			</div>
 		</section>
-		
 
-		<section class="ftco-section howtohelp-section">
-			<div class="container">
-				<div class="row justify-content-center mb-2">
-					<div class="col-md-12 ftco-animate">
-						<h2 class="mb-4 text-center heading-section">رؤيتنا</h2>
-					</div>
+    <section class="ftco-section ftco-consult " style="background-image: url(images/bg_5.jpg); color:#fff !important;" data-stellar-background-ratio="0.5">
+    	<div class="overlay"></div>
+    	<div class="container">
+			<div class="row justify-content-center mb-2">
+				<div class="col-md-12 ftco-animate">
+					<h2 class="mb-4 text-center heading-section" style="color:#fff !important;">رؤيتنا</h2>
 				</div>
-				<div class="row">
+			</div>
+			<div class="row">
 				<div class="col-md-12">
 					<p class="text-justify text-center ">
 						رؤيتنا هي تقديم أنفسنا (FSOL) كمجموعة سورية رائدة ، وتجميع التنوع البيولوجي للنبات في بلدنا الأم في شكل سهل الاستخدام ، والعمل كمتطوع لتعزيز الوعي العام على جميع مستويات وقطاعات المجتمع. شاركنا رؤيتنا مع المشاركين من المجتمعات المحلية والطلاب والمنظمات غير الحكومية في مجال الحماية والاستخدام المستدام للتنوع البيولوجي للنبات. مهمتنا هي إطلاق أنشطة في مجال البحث وجمع البيانات وتبادل المعلومات وتوثيق النباتات في سوريا. تستخدم FSOL اللغة العربية لوصف التنوع البيولوجي للنبات في سوريا على مستوى الأنواع كجزء من مهمتها لاتخاذ إجراءات في تطوير المواد التدريبية والمناهج التعليمية للجيل الجديد من علماء النبات وعلماء البيئة في سوريا ، وكذلك في البلدان الأخرى الناطقة باللغة العربية . تهدف FSOL إلى تقديم وصف موحد للنباتات السورية ، مع الصور والرسوم التوضيحية لمعظم الأنواع ، وخرائط توزيع الأصناف التي لها أهمية خاصة. تغطي بيانات FSOL جميع الأراضي السورية. عند الانتهاء من جمع البيانات ، سوف يؤدي مباشرة إلى صياغة مشروع وطني لإصدار النباتات الحديثة في سوريا.
 					</p>
 				</div>
-				</div>
 			</div>
-		</section>
-
-
-    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/bg_5.jpg);" data-stellar-background-ratio="0.5">
-    	<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row justify-content-end">
-    			<div class="col-md-6 py-5 px-md-5">
-    				<div class="py-md-5">
-		          <div class="heading-section heading-section-white ftco-animate mb-5">
-		            <h2 class="mb-4">اتصل بنا</h2>
-		            <p>إن كنت ترغب في إرسال رسالة لصاحب الموقع، أو تريد طلب خدمة ما لا تتردد بالاتصال:</p>
-		          </div>
-		          <form action="#" class="appointment-form ftco-animate">
-		    				<div class="d-md-flex">
-			    				<div class="form-group">
-			    					<input type="text" class="form-control" placeholder="الاسم">
-			    				</div>
-			    				<div class="form-group ml-md-4">
-			    					<input type="text" class="form-control" placeholder="الموضوع">
-			    				</div>
-		    				</div>
-		    				<div class="d-md-flex">
-		    					<div class="form-group">
-			    					<input type="email" class="form-control" placeholder="E-mail">
-			    				</div>
-		    				</div>
-		    				<div class="d-md-flex">
-		    					<div class="form-group">
-			              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="نص الرسالة"></textarea>
-			            </div>
-			            <div class="form-group mt-md-5">
-			              <input type="submit" value="أرسل" class="float-right btn btn-white py-2">
-			            </div>
-		    				</div>
-		    			</form>
-		    		</div>
-    			</div>
-        </div>
     	</div>
     </section>
 

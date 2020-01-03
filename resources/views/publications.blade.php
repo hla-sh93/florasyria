@@ -25,10 +25,10 @@
               <a href="#" class="card mt-4">
                   <div class="card-body">
                       <div class="row">
-                          <div class="col-md-4 col-sm-6">
-                              <img src="{{asset('images/attachement.png')}}" alt="" class=" float-left" width="100px">
+                          <div class="col-md-2 col-sm-6">
+                              <img src="{{asset('images/attachement.png')}}" alt="" class=" float-right" width="100px">
                           </div>
-                          <div class="col-md-8 col-sm-6">
+                          <div class="col-md-10 col-sm-6">
                               <div class="row">
                                   <div class="col-md-12">
                                       <h5 class="card-title blue float-right mr-0 mt-0">اسم المقال</h5>

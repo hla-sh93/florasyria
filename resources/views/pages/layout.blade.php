@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
   </head>
   <body>
+    
 	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light fixed-top" id="ftco-navbar">
         <a class="navbar-brand" href="#">
             <img src="{{asset('images/logo-white.png')}}" width="90" height="50" alt="">
         </a> 
-	    <div class="container d-flex align-items-center">
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	    </button>
@@ -30,15 +31,26 @@
 
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item {{ Request::path()=='/' ? 'active' : ''}}"><a href="/" class="nav-link pl-0">الرئيسية</a></li>
-	        	<li class="nav-item {{ Request::path()=='syria' ? 'active' : ''}}"><a href="#" class="nav-link"> عن سورية</a></li>
+            {{-- <li class="nav-item {{ Request::path()=='syria' ? 'active' : ''}}"><a href="#" class="nav-link"> عن سورية</a></li> --}}
+            <li class="nav-item {{ Request::path()=='topography' ? 'active' : ''}} dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                عن سورية
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/topography">المناخ والطبوغرافيا</a>
+                <a class="dropdown-item" href="/soil">التربة</a>
+                <a class="dropdown-item" href="/planetBio">التنوع النباتي</a>
+                <a class="dropdown-item" href="/flora">الحياة النباتية</a>
+              </div>
+            </li>
 	        	<li class="nav-item {{ Request::path()=='about' ? 'active' : ''}}"><a href="/about" class="nav-link">المؤسس</a></li>
             <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="/team" class="nav-link">فريق العمل</a></li>
             <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="/publications" class="nav-link">المنشورات</a></li>
-	        	<li class="nav-item {{ Request::path()=='search' ? 'active' : ''}}"><a href="#" class="nav-link">بحث متقدم</a></li>
-	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="#" class="nav-link">الاتصال بنا</a></li>
+	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="/advsearch" class="nav-link">بحث متقدم</a></li>
+	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="/contact" class="nav-link">الاتصال بنا</a></li>
 	        </ul>
 	      </div>
-	    </div>
+
 	  </nav>
     <!-- END nav -->
 
@@ -48,12 +60,19 @@
         <div class="container">
 
           <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-1">
+              <div class="float-right">
+                <a href="#">AR</a> | <a href="#">EN</a>
+              </div>
+            </div>
+            
+            <div class="col-md-11 text-center">
   
               <p>
     Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made  by <a href="#" target="_blank">FloraSyria</a>
    </p>
             </div>
+
           </div>
         </div>
       </footer>
