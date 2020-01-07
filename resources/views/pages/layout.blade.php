@@ -60,13 +60,13 @@
         <div class="container">
 
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <div class="float-right">
-                <a href="#">AR</a> | <a href="#">EN</a>
+                <a href="#">AR <img src="{{asset('images/ar.png')}}" alt="arabic"></a>  |  <a href="#"><img src="{{asset('images/en.png')}}" alt="arabic"> EN </a>
               </div>
             </div>
             
-            <div class="col-md-11 text-center">
+            <div class="col-md-10 text-center">
   
               <p>
     Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made  by <a href="#" target="_blank">FloraSyria</a>
