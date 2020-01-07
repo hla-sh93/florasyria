@@ -30,24 +30,23 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item {{ Request::path()=='/' ? 'active' : ''}}"><a href="/" class="nav-link pl-0">الرئيسية</a></li>
-            {{-- <li class="nav-item {{ Request::path()=='syria' ? 'active' : ''}}"><a href="#" class="nav-link"> عن سورية</a></li> --}}
+	        	<li class="nav-item {{ Request::path()=='/' ? 'active' : ''}}"><a href="/" class="nav-link pl-0">{{ __('Home') }}</a></li>
+            <li class="nav-item {{ Request::path()=='about' ? 'active' : ''}}"><a href="{{route('about',app()->getLocale())}}" class="nav-link">{{ __('founder') }}</a></li>
             <li class="nav-item {{ Request::path()=='topography' ? 'active' : ''}} dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                عن سورية
+                {{__('syria')}} 
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/topography">المناخ والطبوغرافيا</a>
-                <a class="dropdown-item" href="/soil">التربة</a>
-                <a class="dropdown-item" href="/planetBio">التنوع النباتي</a>
-                <a class="dropdown-item" href="/flora">الحياة النباتية</a>
+                <a class="dropdown-item" href="{{route('topography',app()->getLocale())}} ">{{__('Climate and Topography')}}</a>
+                <a class="dropdown-item" href="{{route('soil',app()->getLocale())}} ">{{ __('soil') }}</a>
+                <a class="dropdown-item" href="{{route('planetBio',app()->getLocale())}} "> {{ __('Plant Biodiversity') }}</a>
+                <a class="dropdown-item" href="{{route('flora',app()->getLocale())}} "> {{ __('Flora') }}</a>
               </div>
             </li>
-	        	<li class="nav-item {{ Request::path()=='about' ? 'active' : ''}}"><a href="/about" class="nav-link">المؤسس</a></li>
-            <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="/team" class="nav-link">فريق العمل</a></li>
-            <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="/publications" class="nav-link">المنشورات</a></li>
-	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="/advsearch" class="nav-link">بحث متقدم</a></li>
-	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="/contact" class="nav-link">الاتصال بنا</a></li>
+            <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="{{route('team',app()->getLocale())}}" class="nav-link"> {{ __('team') }}</a></li>
+            <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="{{route('publications',app()->getLocale())}}" class="nav-link">{{ __('publications') }}</a></li>
+	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="{{route('advsearch',app()->getLocale())}} " class="nav-link">{{ __('advsearch') }}</a></li>
+	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact',app()->getLocale())}} " class="nav-link">{{ __('contact') }}</a></li>
 	        </ul>
 	      </div>
 
@@ -62,7 +61,7 @@
           <div class="row">
             <div class="col-md-1">
               <div class="float-right">
-                <a href="#">AR</a> | <a href="#">EN</a>
+                <a href="{{route(Route::currentRouteName(),'ar')}}">AR</a> | <a href="{{route(Route::currentRouteName(),'en')}}">EN</a>
               </div>
             </div>
             
