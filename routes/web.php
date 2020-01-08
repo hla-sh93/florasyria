@@ -16,7 +16,7 @@ Route::group(['prefix' => '{language}'], function(){
 
     Route::get('/', function () {
         return view('index');
-    });
+    })->name('/');
 
     Route::get('/about', function () {
         return view('about');

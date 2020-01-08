@@ -1,7 +1,7 @@
 @extends('pages.layout')
     @section('content')
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
         <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -19,19 +19,19 @@
                 <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                     إذا كنت تحتاج إلى عدد أكبر</p>
                 </div> <br>
-                <div class="col-md-10 offset-md-2 ftco-animate">
+                <div class="col-md-10 offset-md-1 ftco-animate">
                 @for ($i = 0; $i < 4; $i++)
               <!-- Card No1-->
               <a href="#" class="card mt-4">
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-2 col-sm-6">
-                              <img src="{{asset('images/attachement.png')}}" alt="" class=" float-right" width="100px">
+                              <img src="{{asset('images/attachement.png')}}" alt="" class="card_img" width="100px">
                           </div>
                           <div class="col-md-10 col-sm-6">
                               <div class="row">
                                   <div class="col-md-12">
-                                      <h5 class="card-title blue float-right mr-0 mt-0">اسم المقال</h5>
+                                      <h5 class="card-title blue card_title mr-0 mt-0">اسم المقال</h5>
                                   </div>
                               </div>
                               <div class="row">

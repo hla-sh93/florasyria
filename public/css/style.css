@@ -9758,6 +9758,13 @@ textarea.form-control {
       transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
       background-color: #f0f9fd;
   }
+  .card_img{
+    float: right;
+  }
+  
+  .card_title{
+    float: right;
+  }
   
   .card:hover {
       animation-duration: 0.25s;

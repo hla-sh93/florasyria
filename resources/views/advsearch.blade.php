@@ -1,7 +1,7 @@
 @extends('pages.layout')
     @section('content')
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
         <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -108,7 +108,7 @@
                               <div class="col-md-8 col-sm-6">
                                   <div class="row">
                                       <div class="col-md-12">
-                                          <h5 class="card-title blue float-right mr-0 mt-0">اسم الزهرة</h5>
+                                          <h5 class="card-title blue card_title mr-0 mt-0">اسم الزهرة</h5>
                                       </div>
                                   </div>
                                   <div class="row">
