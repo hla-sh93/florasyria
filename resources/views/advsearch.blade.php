@@ -1,7 +1,7 @@
 @extends('pages.layout')
     @section('content')
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
         <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -20,7 +20,7 @@
                 <div class="form-row">
                    <div class="col">
                     <div class="form-group">
-                        <label for="flowring-start">بداية الإزهار :</label>
+                        <label for="flowring-start">{{__('Start Flowering')}}</label>
                         <select class="form-control" id="flowring-start">
                           <option>1</option>
                           <option>2</option>
@@ -31,7 +31,7 @@
                    </div>
                    <div class="col">
                     <div class="form-group">
-                        <label for="flowring-end">نهاية الإزهار :</label>
+                        <label for="flowring-end">{{__('End Flowering')}}</label>
                         <select class="form-control" id="flowring-end">
                           <option>1</option>
                           <option>2</option>
@@ -42,7 +42,7 @@
                    </div>
                    <div class="col">
                     <div class="form-group">
-                        <label for="life">الحياة</label>
+                        <label for="life">{{__('life')}}</label>
                         <select class="form-control" id="life">
                           <option>بصلي</option>
                           <option>بصيلي</option>
@@ -55,7 +55,7 @@
                 <div class="form-row">
                     <div class="col">
                      <div class="form-group">
-                         <label for="econ_value">القيمة الاقتصادية</label>
+                         <label for="econ_value">{{__('Economic Value')}}</label>
                          <select class="form-control" id="econ_value">
                            <option>1</option>
                            <option>2</option>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="col">
                      <div class="form-group">
-                         <label for="syrian_area">المنطقة السورية</label>
+                         <label for="syrian_area">{{__('Syrian Areas')}}</label>
                          <select class="form-control" id="syrian_area">
                            <option>1</option>
                            <option>2</option>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="col">
                      <div class="form-group">
-                         <label for="areas">المناطق</label>
+                         <label for="areas">{{__('Areas')}}</label>
                          <select class="form-control" id="areas">
                            <option>1</option>
                            <option>2</option>
@@ -87,7 +87,7 @@
                     </div>
                  </div>
                  <div class="form-group">
-                    <input type="submit" value="بحث" class="btn btn-primary py-2 px-5 float-left">
+                    <input type="submit" value="{{__('Search')}}" class="btn btn-primary py-2 px-5 float-left">
                   </div>
               </form>
             
@@ -108,7 +108,7 @@
                               <div class="col-md-8 col-sm-6">
                                   <div class="row">
                                       <div class="col-md-12">
-                                          <h5 class="card-title blue float-right mr-0 mt-0">اسم الزهرة</h5>
+                                          <h5 class="card-title blue card_title mr-0 mt-0">اسم الزهرة</h5>
                                       </div>
                                   </div>
                                   <div class="row">

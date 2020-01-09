@@ -23,24 +23,24 @@
 							<div class="text">
 								<h3>Pistacia palaestina</h3>
 								<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخ</p>
-								<p><a href="/details" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
+								<p><a href="{{route('details',app()->getLocale())}}" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-7  pr-md-4 ftco-animate">
-					  <h2 class="mb-4">Flowering Now</h2>
+					  <h2 class="mb-4">{{__('Flowering Now')}}</h2>
 					  @for ($i = 0; $i < 3; $i++)
                     <!-- Card No1-->
-                    <a href="/details" class="card mt-4">
+                    <a href="{{route('details',app()->getLocale())}}" class="card mt-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-6">
-                                    <img src="{{asset('images/anabasis syriaca.jpg')}}" alt="" class=" float-right" width="100px">
+                                    <img src="{{asset('images/anabasis syriaca.jpg')}}" alt="" class="card_img" width="100px">
                                 </div>
                                 <div class="col-md-8 col-sm-6">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h5 class="card-title blue float-right mr-0 mt-0">اسم الزهرة</h5>
+                                            <h5 class="card-title blue card_title mr-0 mt-0">اسم الزهرة</h5>
                                         </div>
 									</div>
 									<div class="row">
@@ -64,7 +64,7 @@
     	<div class="container">
 			<div class="row justify-content-center mb-2">
 				<div class="col-md-12 ftco-animate">
-					<h2 class="mb-4 text-center heading-section" style="color:#fff !important;">رؤيتنا</h2>
+					<h2 class="mb-4 text-center heading-section" style="color:#fff !important;">{{__('Our Vision')}}</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -81,7 +81,7 @@
         <div class="container">
             <div class="row justify-content-center mb-2">
                 <div class="col-md-12 ftco-animate">
-                    <h2 class="mb-4 text-center heading-section">كيف نساعد؟</h2>
+                    <h2 class="mb-4 text-center heading-section">{{__('How Can We Help')}}</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -104,7 +104,7 @@
       <div class="container">
         <div class="row justify-content-center mb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
-            <h2 class="mb-4">الرعاة</h2>
+            <h2 class="mb-4">{{__('Sponsors')}}</h2>
             <p>هذا المشروع تم انجازه بفضل الرعاية الكريمة من </p>
           </div>
         </div>

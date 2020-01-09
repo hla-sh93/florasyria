@@ -68,7 +68,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  text-align: right;
+  text-align: left;
   background-color: #f0f0f0;
 }
 
@@ -3478,7 +3478,7 @@ input[type="button"].btn-block {
     text-decoration: none; }
 
 .navbar-nav {
-  direction: rtl;
+  direction: ltr;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8243,7 +8243,7 @@ h1, h2, h3, h4, h5,
   background: #59ca75 !important;
   z-index: 3;
   padding: 0;
-  /* direction:rtl; */
+  /* direction:ltr; */
    }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
@@ -8861,7 +8861,7 @@ textarea.form-control {
 .ftco-section {
   padding: 7em 0;
   position: relative;
-  direction: rtl; }
+  direction: ltr; }
 
 .ftco-no-pt {
   padding-top: 0; }
@@ -9757,15 +9757,16 @@ textarea.form-control {
       /* border-bottom: 3px #59CA75 solid; */
       transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
       background-color: #f0f9fd;
+      direction: ltr;
   }
+
   .card_img{
-    float: right;
+    float: left;
   }
   
   .card_title{
-    float: right;
+    float: left;
   }
-  
   .card:hover {
       animation-duration: 0.25s;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.11), 0 10px 10px rgba(0, 0, 0, 0.11);

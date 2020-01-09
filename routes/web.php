@@ -10,47 +10,52 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::redirect('/','/en');
+Route::group(['prefix' => '{language}'], function(){
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/about', function () {
-    return view('about');
-});
+    Route::get('/', function () {
+        return view('index');
+    })->name('/');
 
-Route::get('/team', function () {
-    return view('team');
-});
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
 
-Route::get('/publications', function () {
-    return view('publications');
-});
+    Route::get('/team', function () {
+        return view('team');
+    })->name('team');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+    Route::get('/publications', function () {
+        return view('publications');
+    })->name('publications');
 
-Route::get('/advsearch', function () {
-    return view('advsearch');
-});
+    Route::get('/contact', function () {
+        return view('contact');
+    })->name('contact');
 
-Route::get('/topography', function () {
-    return view('topography');
-});
+    Route::get('/advsearch', function () {
+        return view('advsearch');
+    })->name('advsearch');
 
-Route::get('/soil', function () {
-    return view('soil');
-});
+    Route::get('/topography', function () {
+        return view('topography');
+    })->name('topography');
 
-Route::get('/planetBio', function () {
-    return view('planetBio');
-});
+    Route::get('/soil', function () {
+        return view('soil');
+    })->name('soil');
 
-Route::get('/flora', function () {
-    return view('flora');
-});
+    Route::get('/planetBio', function () {
+        return view('planetBio');
+    })->name('planetBio');
 
-Route::get('/details', function () {
-    return view('details');
+    Route::get('/flora', function () {
+        return view('flora');
+    })->name('flora');
+
+    Route::get('/details', function () {
+        return view('details');
+    })->name('details');
+
 });

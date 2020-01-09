@@ -14,7 +14,13 @@
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @if(App::getLocale()=="ar"){
+      <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    }@else{
+      <link rel="stylesheet" href="{{asset('css/enstyle.css')}}">
+    }
+    @endif
+    
   </head>
   <body>
     
@@ -30,24 +36,23 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item {{ Request::path()=='/' ? 'active' : ''}}"><a href="/" class="nav-link pl-0">الرئيسية</a></li>
-            {{-- <li class="nav-item {{ Request::path()=='syria' ? 'active' : ''}}"><a href="#" class="nav-link"> عن سورية</a></li> --}}
+	        	<li class="nav-item {{ Request::path()=='/' ? 'active' : ''}}"><a href="/" class="nav-link pl-0">{{ __('Home') }}</a></li>
+            <li class="nav-item {{ Request::path()=='about' ? 'active' : ''}}"><a href="{{route('about',app()->getLocale())}}" class="nav-link">{{ __('founder') }}</a></li>
             <li class="nav-item {{ Request::path()=='topography' ? 'active' : ''}} dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                عن سورية
+                {{__('syria')}} 
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/topography">المناخ والطبوغرافيا</a>
-                <a class="dropdown-item" href="/soil">التربة</a>
-                <a class="dropdown-item" href="/planetBio">التنوع النباتي</a>
-                <a class="dropdown-item" href="/flora">الحياة النباتية</a>
+                <a class="dropdown-item" href="{{route('topography',app()->getLocale())}} ">{{__('Climate and Topography')}}</a>
+                <a class="dropdown-item" href="{{route('soil',app()->getLocale())}} ">{{ __('soil') }}</a>
+                <a class="dropdown-item" href="{{route('planetBio',app()->getLocale())}} "> {{ __('Plant Biodiversity') }}</a>
+                <a class="dropdown-item" href="{{route('flora',app()->getLocale())}} "> {{ __('Flora') }}</a>
               </div>
             </li>
-	        	<li class="nav-item {{ Request::path()=='about' ? 'active' : ''}}"><a href="/about" class="nav-link">المؤسس</a></li>
-            <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="/team" class="nav-link">فريق العمل</a></li>
-            <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="/publications" class="nav-link">المنشورات</a></li>
-	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="/advsearch" class="nav-link">بحث متقدم</a></li>
-	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="/contact" class="nav-link">الاتصال بنا</a></li>
+            <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="{{route('team',app()->getLocale())}}" class="nav-link"> {{ __('team') }}</a></li>
+            <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="{{route('publications',app()->getLocale())}}" class="nav-link">{{ __('publications') }}</a></li>
+	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="{{route('advsearch',app()->getLocale())}} " class="nav-link">{{ __('advsearch') }}</a></li>
+	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact',app()->getLocale())}} " class="nav-link">{{ __('contact') }}</a></li>
 	        </ul>
 	      </div>
 
@@ -62,14 +67,15 @@
           <div class="row">
             <div class="col-md-2">
               <div class="float-right">
-                <a href="#">AR <img src="{{asset('images/ar.png')}}" alt="arabic"></a>  |  <a href="#"><img src="{{asset('images/en.png')}}" alt="arabic"> EN </a>
+
+                <a href="{{route(Route::currentRouteName(),'ar')}}"> AR <img src="{{asset('images/ar.png')}}" alt="arabic"> </a> | <a href="{{route(Route::currentRouteName(),'en')}}"><img src="{{asset('images/en.png')}}" alt="arabic"> EN </a>
               </div>
             </div>
             
             <div class="col-md-10 text-center">
   
               <p>
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made  by <a href="#" target="_blank">FloraSyria</a>
+    &copy;{{ __('All rights reserved | This Website is made  by') }} <a href="#" target="_blank">FloraSyria</a> <script>document.write(new Date().getFullYear());</script>
    </p>
             </div>
 
