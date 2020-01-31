@@ -22,7 +22,9 @@
                         إذا كنت تحتاج إلى عدد أكبر</p>
                     <div class="row mt-5">
                         @for($i=0;$i<4;$i++)
-                        <div class="col-lg-6">
+                    
+                       <div class="col-lg-6">
+                        <a  href="{{route('about',app()->getLocale())}}">
                             <div class="services text-center">
                                 <div class="icon mt-2 d-flex justify-content-center align-items-center">
                                    <img src="{{asset('images/person_1.jpg')}}" alt="" class="rounded-circle user-img" >
@@ -31,8 +33,10 @@
                                     <h3>اسم الموظف</h3>
                                     <p>العمل - الدراسة - الخبرة - أو أي معلومات أخرى.</p>
                                 </div>
-                            </div> 
-                        </div>      
+                            </div>
+                        </a> 
+                        </div>
+                      
                          @endfor   
                     </div>
                 </div>

@@ -51,7 +51,7 @@
             </li>
             <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="{{route('team',app()->getLocale())}}" class="nav-link"> {{ __('team') }}</a></li>
             <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="{{route('publications',app()->getLocale())}}" class="nav-link">{{ __('publications') }}</a></li>
-	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="{{route('advsearch',app()->getLocale())}} " class="nav-link">{{ __('advsearch') }}</a></li>
+	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="{{route('search',app()->getLocale())}} " class="nav-link">{{ __('Search') }}</a></li>
 	          <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact',app()->getLocale())}} " class="nav-link">{{ __('contact') }}</a></li>
 	        </ul>
 	      </div>

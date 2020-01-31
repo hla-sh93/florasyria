@@ -34,6 +34,10 @@ Route::group(['prefix' => '{language}'], function(){
         return view('contact');
     })->name('contact');
 
+    Route::get('/search', function () {
+        return view('quksearch');
+    })->name('search');
+
     Route::get('/advsearch', function () {
         return view('advsearch');
     })->name('advsearch');

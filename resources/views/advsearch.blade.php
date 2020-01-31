@@ -64,17 +64,7 @@
                          </select>
                        </div>
                     </div>
-                    <div class="col">
-                     <div class="form-group">
-                         <label for="syrian_area">{{__('Syrian Areas')}}</label>
-                         <select class="form-control" id="syrian_area">
-                           <option>1</option>
-                           <option>2</option>
-                           <option>3</option>
-                           <option>4</option>
-                         </select>
-                       </div>
-                    </div>
+
                     <div class="col">
                      <div class="form-group">
                          <label for="areas">{{__('Areas')}}</label>
@@ -85,7 +75,44 @@
                          </select>
                        </div>
                     </div>
-                 </div>
+                  </div>
+                  
+                    <div class="form-row">
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="syrian_gov">{{__('Syrian Governorate')}}</label>
+                            <select class="form-control" id="syrian_gov">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
+                       </div>
+                       <div class="col">
+                        <div class="form-group">
+                            <label for="syrian_cities">{{__('Syrian Cities')}}</label>
+                            <select class="form-control" id="syrian_cities">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
+                       </div>
+                       <div class="col">
+                        <div class="form-group">
+                            <label for="syrian_vil">{{__('Syrian Villages')}}</label>
+                            <select class="form-control" id="syrian_vil">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
+                       </div>
+                    </div>
+                
                  <div class="form-group">
                     <input type="submit" value="{{__('Search')}}" class="btn btn-primary py-2 px-5 float-left">
                   </div>
