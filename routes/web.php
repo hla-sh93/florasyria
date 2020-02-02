@@ -10,10 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/','/en');
-Route::group(['prefix' => '{language}'], function(){
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
+// Route::redirect('/','/ar');
 
+Route::get('/changeLang/{lang}','UtilsController@lang')->name('changelang');
+
+Route::prefix('{language?}')->middleware('locale')->group( function(){
+
+    
     Route::get('/', function () {
         return view('index');
     })->name('/');
