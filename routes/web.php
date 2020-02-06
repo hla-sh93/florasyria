@@ -21,17 +21,12 @@ Route::get('/changeLang/{lang}','UtilsController@lang')->name('changelang');
 Route::prefix('{language?}')->middleware('locale')->group( function(){
 
     
-    Route::get('/', function () {
-        return view('index');
-    })->name('/');
+    Route::get('/', 'HomePageController@index')->name('/');
 
-    Route::get('/about', function () {
-        return view('about');
-    })->name('about');
+    Route::get('/profile/{id}','PagesController@ShowProfile',array('as'=>'profile'))->name('profile');
+    Route::get('/about','PagesController@founder')->name('about');
 
-    Route::get('/team', function () {
-        return view('team');
-    })->name('team');
+    Route::get('/team', 'PagesController@team')->name('team');
 
     Route::get('/publications', function () {
         return view('publications');

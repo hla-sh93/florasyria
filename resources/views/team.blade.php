@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title') Team @endsection
     @section('content')
 
     <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
@@ -21,23 +22,42 @@
                     <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                         إذا كنت تحتاج إلى عدد أكبر</p>
                     <div class="row mt-5">
-                        @for($i=0;$i<4;$i++)
-                    
+                        @foreach ($teams as $team)
                        <div class="col-lg-6">
-                        <a  href="{{route('about',app()->getLocale())}}">
+                        <a  href="{{ route('profile',[app()->getLocale(), $team->id] )}}">
                             <div class="services text-center">
                                 <div class="icon mt-2 d-flex justify-content-center align-items-center">
-                                   <img src="{{asset('images/person_1.jpg')}}" alt="" class="rounded-circle user-img" >
+                                    <?php 
+                                    if(Voyager::image($team->img) =="") {  ?>
+                                    <img src="{{asset('images/user.jpg')}}" alt="{{$team->en_name}}" class="rounded-circle user-img" >
+                                    <?php 
+                                     } else { ?>
+                                     
+                                   <img src="{{Voyager::image($team->img)}}" alt="{{$team->en_name}}" class="rounded-circle user-img" >
+                               <?php }?>
                                 </div>
                                 <div class="text media-body">
-                                    <h3>اسم الموظف</h3>
-                                    <p>العمل - الدراسة - الخبرة - أو أي معلومات أخرى.</p>
+                                    <h3>
+                                        @if(App::getLocale()=="ar")
+                                        {{$team->ar_name}}
+                                    @else
+                                        {{$team->en_name}}
+                                    
+                                    @endif
+                                    </h3>
+                                    <p>
+                                        @if(App::getLocale()=="ar")
+                                            {{$team->ar_jobTitle}}
+                                        @else
+                                            {{$team->en_jobTitle}}
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
                         </a> 
                         </div>
                       
-                         @endfor   
+                        @endforeach  
                     </div>
                 </div>
             </div>
