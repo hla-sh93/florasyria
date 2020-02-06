@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title') Home  @endsection
     @section('content')
 	
     <section class="home-slider owl-carousel">

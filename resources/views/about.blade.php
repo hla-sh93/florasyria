@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title') Founder @endsection
     @section('content')
 
     <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">

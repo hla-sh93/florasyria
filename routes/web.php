@@ -28,9 +28,7 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
 
     Route::get('/team', 'PagesController@team')->name('team');
 
-    Route::get('/publications', function () {
-        return view('publications');
-    })->name('publications');
+    Route::get('/publications', 'PagesController@publication' )->name('publications');
 
     Route::get('/contact', function () {
         return view('contact');
@@ -44,9 +42,7 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
         return view('advsearch');
     })->name('advsearch');
 
-    Route::get('/topography', function () {
-        return view('topography');
-    })->name('topography');
+    Route::get('/topography', 'climateController@index')->name('topography');
 
     Route::get('/soil', function () {
         return view('soil');

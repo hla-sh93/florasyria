@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title') Publications  @endsection
     @section('content')
 
     <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
@@ -20,9 +21,10 @@
                     إذا كنت تحتاج إلى عدد أكبر</p>
                 </div> <br>
                 <div class="col-md-10 offset-md-1 ftco-animate">
-                @for ($i = 0; $i < 4; $i++)
+                @foreach ($publications as $item)
               <!-- Card No1-->
-              <a href="#" class="card mt-4">
+              <?php $file = (json_decode($item->document))[0]->download_link; ?>
+              <a href="{{Voyager::image( $file ) }}" class="card mt-4">
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-2 col-sm-6">
@@ -31,13 +33,12 @@
                           <div class="col-md-10 col-sm-6">
                               <div class="row">
                                   <div class="col-md-12">
-                                      <h5 class="card-title blue card_title mr-0 mt-0">اسم المقال</h5>
+                                      <h5 class="card-title blue card_title mr-0 mt-0">{{$item->name}}</h5>
                                   </div>
                               </div>
                               <div class="row">
                                   <div class="col-md-12">
-                                      <p class="mb-0 pb-0">هذا النص هو مثال لنص يمكن أن يستبدل في نفس </p>
-                                      <p class="blockquote-footer"> 12/10/2019</p>
+                                      <p class="mb-0 pb-0">{{$item->desc}}</p>
                                   </div>
                               </div>
                           </div>
@@ -45,7 +46,7 @@
                   </div>
               </a>
               <!-- End Card No1-->
-              @endfor
+              @endforeach
               </div>
         </div>
     </section>

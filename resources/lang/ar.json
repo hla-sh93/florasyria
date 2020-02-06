@@ -41,5 +41,11 @@
     "your Email":"بريدك الالكتروني",
     "your Subject":"الموضوع",
     "your Message":"نص الرسالة",
-    "Send":"أرسل"
+    "Send":"أرسل",
+    "Climate and Topography":"المناخ والطبوغرافيا",
+    "Rainfall":"توزع الأمطار",
+    "Temperature" : "الحرارة",
+    "Evaporation" : "الرطوبة",
+    "Bio-climatic Subdivision" : "التقسيم المناخي الحيوي",
+    "attachement" : "ملف مرفق"
 }
