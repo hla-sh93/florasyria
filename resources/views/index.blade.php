@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('title') Home  @endsection
+@section('title','Home')
     @section('content')
 	
     <section class="home-slider owl-carousel">
@@ -18,43 +18,47 @@
 			<div class="container">
 				<div class="row d-flex">
 					<div class="col-md-5 order-md-last wrap-about align-items-stretch">
+						@foreach($rand as $item)
+						
 						<div class="wrap-about-border ftco-animate">
-							<img src="{{asset('images/anabasis syriaca.jpg')}}" alt="anabasis syriaca">
-							{{-- <div class="img" style="background-image: url(images/about.jpg); border"></div> --}}
+							<img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}">
 							<div class="text">
-								<h3>Pistacia palaestina</h3>
-								<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخ</p>
-								<p><a href="{{route('details',app()->getLocale())}}" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
+								<h3>{{$item->species->name}} {{ $item->name}}</h3>
+								<p>{{ substr($item->desc,0,200 ) }} ...</p>
+								<p><a href="{{ route('details',[app()->getLocale(), $item->id] )}}" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
 							</div>
 						</div>
+						@endforeach
 					</div>
 					<div class="col-md-7  pr-md-4 ftco-animate">
 					  <h2 class="mb-4">{{__('Flowering Now')}}</h2>
-					  @for ($i = 0; $i < 3; $i++)
-                    <!-- Card No1-->
-                    <a href="{{route('details',app()->getLocale())}}" class="card mt-4">
-                        <div class="card-body">
+					  @foreach ($species as $item)
+						@if(date('m') >= $item->start_flower && date('m') <= $item->end_flower)
+					<!-- Card No1-->
+                    <a href="{{ route('details',[app()->getLocale(), $item->id] )}}" class="card mt-4">
+                        <div class="card-body p-1">
                             <div class="row">
-                                <div class="col-md-4 col-sm-6">
-                                    <img src="{{asset('images/anabasis syriaca.jpg')}}" alt="" class="card_img" width="100px">
+                                <div class="col-md-3 col-sm-6 align-items-center d-flex justify-content-center">
+                                    <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}"  width="90px" height="90px">
                                 </div>
                                 <div class="col-md-8 col-sm-6">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h5 class="card-title blue card_title mr-0 mt-0">اسم الزهرة</h5>
+										<h5 class="card-title blue card_title mr-0 mt-0">{{$item->species->name}} {{ $item->name}}</h5>
                                         </div>
 									</div>
 									<div class="row">
                                         <div class="col-md-12">
-                                            <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس </p>
+										<p>{{ substr($item->desc,0,100 ) }} ...</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </a>
+					</a>
+					@endif
 					<!-- End Card No1-->
-					@endfor
+					@endforeach
 					</div>
 				</div>
 			</div>

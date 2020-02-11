@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Team;
 use App\Publication;
+use App\Soil;
+use App\PlanetBiodiversity;
+use App\PreviousStudy;
+use App\FloranEndemism;
+use App\Species;
 
 class PagesController extends Controller
 {
@@ -26,6 +31,27 @@ class PagesController extends Controller
     public function publication (){
         $publications=Publication::all();
         return view('publications', ['publications' => $publications]);
+    }
+
+    public function soil (){
+        $soil=soil::all();;
+        return view('soil', ['soil' => $soil]);
+    }
+
+    public function planetBio (){
+        $bio=PlanetBiodiversity::all();;
+        return view('planetBio', ['bio' => $bio]);
+    }
+
+    public function previousStudies (){
+        $pre=PreviousStudy::where('id',1)->get();
+        $flo=FloranEndemism::all();
+        return view('flora', ['pre' => $pre, 'flo' => $flo]);
+    }
+
+    public function details ($language,$id){
+        $spe=Species::where('id',$id)->get();
+        return view('details',['spe' => $spe]);
     }
 
 }

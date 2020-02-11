@@ -9757,6 +9757,8 @@ textarea.form-control {
       /* border-bottom: 3px #59CA75 solid; */
       transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
       background-color: #f0f9fd;
+      font-size: 10pt;
+      padding: 0 !important;
   }
   .card_img{
     float: right;

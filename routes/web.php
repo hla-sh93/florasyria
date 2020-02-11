@@ -19,16 +19,28 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/changeLang/{lang}','UtilsController@lang')->name('changelang');
 
 Route::prefix('{language?}')->middleware('locale')->group( function(){
-
     
     Route::get('/', 'HomePageController@index')->name('/');
 
-    Route::get('/profile/{id}','PagesController@ShowProfile',array('as'=>'profile'))->name('profile');
+    Route::get('/profile/{id}','PagesController@ShowProfile')->name('profile');
+
+    Route::get('/details/{id}', 'PagesController@details')->name('details');
+
     Route::get('/about','PagesController@founder')->name('about');
 
     Route::get('/team', 'PagesController@team')->name('team');
 
     Route::get('/publications', 'PagesController@publication' )->name('publications');
+
+    Route::get('/topography', 'climateController@index')->name('topography');
+
+    Route::get('/soil','PagesController@soil')->name('soil');
+
+    Route::get('/planetBio','PagesController@planetBio' )->name('planetBio');
+
+    Route::get('/flora','PagesController@previousStudies' )->name('flora');
+
+    
 
     Route::get('/contact', function () {
         return view('contact');
@@ -41,23 +53,5 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
     Route::get('/advsearch', function () {
         return view('advsearch');
     })->name('advsearch');
-
-    Route::get('/topography', 'climateController@index')->name('topography');
-
-    Route::get('/soil', function () {
-        return view('soil');
-    })->name('soil');
-
-    Route::get('/planetBio', function () {
-        return view('planetBio');
-    })->name('planetBio');
-
-    Route::get('/flora', function () {
-        return view('flora');
-    })->name('flora');
-
-    Route::get('/details', function () {
-        return view('details');
-    })->name('details');
 
 });

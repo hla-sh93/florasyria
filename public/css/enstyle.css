@@ -9758,10 +9758,12 @@ textarea.form-control {
       transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
       background-color: #f0f9fd;
       direction: ltr;
+      font-size: 10pt;
+      padding: 0 !important;
   }
 
   .card_img{
-    float: left;
+    float: right;
   }
   
   .card_title{
