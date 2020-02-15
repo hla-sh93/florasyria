@@ -38,17 +38,15 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
 
     Route::get('/planetBio','PagesController@planetBio' )->name('planetBio');
 
-    Route::get('/flora','PagesController@previousStudies' )->name('flora');
-
-    
+    Route::get('/flora','PagesController@previousStudies' )->name('flora');    
 
     Route::get('/contact', function () {
         return view('contact');
     })->name('contact');
 
-    Route::get('/search', function () {
-        return view('quksearch');
-    })->name('search');
+    Route::get('/search', 'searchController@filter')->name('search');
+    Route::get('/searchgenera/{id}', 'searchController@genera');
+    Route::get('/searchspecies', 'searchController@species');
 
     Route::get('/advsearch', function () {
         return view('advsearch');

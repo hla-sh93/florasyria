@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="{{app()->getLocale()}}">
   <head>
     <title>{{env('APP_NAME','FloraSyria')}} | @yield('title') </title>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
       <link rel="stylesheet" href="{{asset('css/enstyle.css')}}">
     }
     @endif
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
   </head>
   <body>
     
@@ -101,9 +101,9 @@
     <script src="{{asset('js/aos.js')}}"></script>
     <script src="{{asset('js/jquery.animateNumber.min.js')}}"></script>
     <script src="{{asset('js/scrollax.min.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{{asset('js/google-map.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+
+    @yield('script')
       
     </body>
   </html>
