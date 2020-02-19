@@ -48,8 +48,9 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
     Route::get('/searchgenera/{id}', 'searchController@genera');
     Route::get('/searchspecies', 'searchController@species');
 
-    Route::get('/advsearch', function () {
-        return view('advsearch');
-    })->name('advsearch');
+    Route::get('/advsearch', 'advancedFilterController@index')->name('advsearch');
+    Route::get('/advsearchfetch', 'advancedFilterController@fetch');
+    Route::post('/advsearch', 'advancedFilterController@search')->name('advsearch');
+    
 
 });

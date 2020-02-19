@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Syrianarea extends Model
+class Location extends Model
 {
     protected $table = 'locations';
     public $timestamps = false;

@@ -93,8 +93,8 @@
                         <div class="col-md-6">
                             <h4>التوزع في سورية حسب المناطق</h4>
                             <p class="text-justify">
-                                @if( $item->syrareas_id !="")
-                                {{$item->syrarea->name}}
+                                @if( $item->location_id !="")
+                                {{$item->location->name}}
                                 @endif
                             </p>
                         </div>

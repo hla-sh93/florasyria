@@ -57,7 +57,7 @@ class searchController extends Controller
                 </a>';
                 }
             }else{
-                $output = ' <p align="center" colspan="5">No Data Found</p>  ';
+                $output = ' ';
                 }
 
       $data = array(

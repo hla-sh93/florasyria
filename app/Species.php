@@ -29,8 +29,8 @@ class Species extends Model
     {
         return $this->belongsTo('App\Area', 'area_id');
     }
-    public function syrarea()
+    public function location()
     {
-        return $this->belongsTo('App\Syrianarea', 'syrareas_id');
+        return $this->belongsTo('App\Location', 'location_id');
     }
 }
