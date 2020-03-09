@@ -65,29 +65,99 @@ class advancedFilterController extends Controller
             'flowring-end' => $request->input('flowring-end'),
                     'life' => $request->input('life'),
               'econ_value' => $request->input('econ_value'),
-                   'areas' => $request->input('areas')
+                   'areas' => $request->input('areas'),
+                   'governorates' => $request->input('governorates'),
+                   'cities' => $request->input('cities'),
+                   'villages' => $request->input('villages')
         ];
-        
-        $data = Species::where(function ($query) use ($filters) {
+
+        $data2 = DB::table('species As s')
+        ->select('s.id as id','s.name as name','s.img as img','s.desc As desc','gen.name As Gname')
+        ->join('locations As l', 'l.id', '=', 's.location_id')
+        ->join('villages As v', 'v.id', '=', 'l.village_id')
+        ->join('cities As c', 'c.id', '=', 'v.city_id')
+        ->join('governorates As g', 'g.id', '=', 'c.gove_id')
+        ->join('genera As gen', 'gen.id', '=', 's.genus_id')
+        ->where(function ($query) use ($filters) {
             if ($filters['flowring-start']) {
-                $query->orWhere('start_flower', '=', $filters['flowring-start']);
-            }
-             if ($filters['flowring-end']) {
-                $query->orWhere('end_flower', '=', $filters['flowring-end']);
-            }
-            if ($filters['life']) {
-                $query->orWhere('life1_id', '=', $filters['life'])->orWhere('life2_id', '=', $filters['life']);
-            }
-            if ($filters['econ_value']) {
-                $query->orWhere('ecValue_id', '=', $filters['econ_value']);
-            }
-            if ($filters['areas']) {
-                $query->orWhere('area_id', '=', $filters['areas']);
-            }
-        })->get();
+                  $query->Where('start_flower', '=', $filters['flowring-start']);
+              }
+               if ($filters['flowring-end']) {
+                  $query->Where('end_flower', '=', $filters['flowring-end']);
+              }
+              if ($filters['life']) {
+                  $query->Where('life1_id', '=', $filters['life'])->orWhere('life2_id', '=', $filters['life']);
+              }
+              if ($filters['econ_value']) {
+                  $query->Where('ecValue_id', '=', $filters['econ_value']);
+              }
+              if ($filters['areas']) {
+                  $query->Where('area_id', '=', $filters['areas']);
+              }
+              if ($filters['governorates']) {
+                 $query->Where('gove_id', '=', $filters['governorates']);
+             }
+             if ($filters['cities']) {
+                 $query->Where('city_id', '=', $filters['cities']);
+             }
+             if ($filters['villages']) {
+                 $query->Where('village_id', '=', $filters['villages']);
+             }
+          })
+        ->get();
 
-        
+        // $data2=  Species::with('species')
+        //             ->Join('locations', 'species.location_id', '=', 'locations.id')
+        //             ->Join('villages', 'villages.id', '=', 'locations.village_id')
+        //             ->Join('cities', 'cities.id', '=', 'villages.city_id')
+        //             ->Join('governorates as gov', 'gov.id', '=', 'cities.gove_id')
+        //             ->where(function ($query) use ($filters) {
+        //                    if ($filters['flowring-start']) {
+        //                          $query->Where('start_flower', '=', $filters['flowring-start']);
+        //                      }
+        //                       if ($filters['flowring-end']) {
+        //                          $query->Where('end_flower', '=', $filters['flowring-end']);
+        //                      }
+        //                      if ($filters['life']) {
+        //                          $query->Where('life1_id', '=', $filters['life'])->orWhere('life2_id', '=', $filters['life']);
+        //                      }
+        //                      if ($filters['econ_value']) {
+        //                          $query->Where('ecValue_id', '=', $filters['econ_value']);
+        //                      }
+        //                      if ($filters['areas']) {
+        //                          $query->Where('area_id', '=', $filters['areas']);
+        //                      }
+        //                      if ($filters['governorates']) {
+        //                         $query->Where('gove_id', '=', $filters['governorates']);
+        //                     }
+        //                     if ($filters['cities']) {
+        //                         $query->Where('city_id', '=', $filters['cities']);
+        //                     }
+        //                     if ($filters['villages']) {
+        //                         $query->Where('village_id', '=', $filters['villages']);
+        //                     }
+        //                  })->paginate(5);
 
+        // $data = Species::where(function ($query) use ($filters) {
+        //     if ($filters['flowring-start']) {
+        //         $query->Where('start_flower', '=', $filters['flowring-start']);
+        //     }
+        //      if ($filters['flowring-end']) {
+        //         $query->Where('end_flower', '=', $filters['flowring-end']);
+        //     }
+        //     if ($filters['life']) {
+        //         $query->Where('life1_id', '=', $filters['life'])->orWhere('life2_id', '=', $filters['life']);
+        //     }
+        //     if ($filters['econ_value']) {
+        //         $query->Where('ecValue_id', '=', $filters['econ_value']);
+        //     }
+        //     if ($filters['areas']) {
+        //         $query->Where('area_id', '=', $filters['areas']);
+        //     }
+        // })->get();
+
+
+        // dd($data2);
         $lives=Life::all();
         $ecoValues=EcoValue::all();
         $areas=Area::all();
@@ -97,7 +167,7 @@ class advancedFilterController extends Controller
                                 'ecoValues' => $ecoValues,
                                 'areas' => $areas,
                                 'govs' => $govs,
-                                'species' => $data
+                                'species' => $data2
         ]);
     }
 }
