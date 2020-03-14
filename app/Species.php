@@ -33,4 +33,8 @@ class Species extends Model
     {
         return $this->belongsTo('App\Location', 'location_id');
     }
+    public function reference()
+    {
+        return $this->belongsTo('App\Reference', 'reference_id');
+    }
 }

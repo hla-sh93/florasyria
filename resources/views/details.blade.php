@@ -23,7 +23,13 @@
 			<div class="row">
                 <div class="col-md-9">
                     <p class="text-justify">
-                        {{$item->desc}} {{ $item->name}}
+                        {{$item->desc}}
+                    </p>
+                    <p class="text-justify">
+                        @if( $item->reference_id !="")
+                        Reference:
+                        <a href="{{$item->reference->source}}" target="_blank">{{$item->reference->title}}</a>
+                        @endif 
                     </p>
                 </div>
                 <div class="col-md-3">
