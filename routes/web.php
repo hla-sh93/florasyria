@@ -40,9 +40,8 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
 
     Route::get('/flora','PagesController@previousStudies' )->name('flora');    
 
-    Route::get('/contact', function () {
-        return view('contact');
-    })->name('contact');
+    Route::get('/contact', 'ContactFormController@create')->name('contact');
+    Route::post('/contact', 'ContactFormController@store')->name('contact.store');
 
     Route::get('/search', 'searchController@filter')->name('search');
     Route::get('/searchgenera/{id}', 'searchController@genera');

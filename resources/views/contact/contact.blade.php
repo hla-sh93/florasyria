@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title','Contact')
     @section('content')
 
     <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
@@ -43,18 +44,19 @@
           <div class="row block-9 justify-content-center mb-5">
             <div class="col-md-8 mb-md-5">
                 <h2 class="text-center">{{__('Or you can send us a message right here')}}</h2>
-              <form action="#" class="bg-light p-5 contact-form">
+            <form action="{{route('contact.store',app()->getLocale())}}" method="POST" class="bg-light p-5 contact-form">
+                @csrf
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="{{__('your Name')}}">
+                  <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="{{__('your Name')}}">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="{{__('your Email')}}">
+                  <input type="text" class="form-control" id="contact_email" name="contact_email" placeholder="{{__('your Email')}}">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="{{__('your Subject')}}">
+                  <input type="text" class="form-control" id="contact_subject" name="contact_subject" placeholder="{{__('your Subject')}}">
                 </div>
                 <div class="form-group">
-                  <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="{{__('your Message')}}"></textarea>
+                  <textarea id="contact_message" name="contact_message" cols="30" rows="7" class="form-control" placeholder="{{__('your Message')}}"></textarea>
                 </div>
                 <div class="form-group">
                   <input type="submit" value="{{__('Send')}}" class="btn btn-primary py-3 px-5">
