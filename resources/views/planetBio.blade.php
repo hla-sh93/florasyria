@@ -55,4 +55,8 @@
     </section>
 
 
-	@endsection
+    @endsection
+    
+@section('footer')	
+@include('layout.footer')
+@endsection

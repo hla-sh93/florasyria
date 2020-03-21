@@ -33,7 +33,8 @@ class searchController extends Controller
             $total_row = $data->count();
             if($total_row > 0) {
                 foreach($data as $row) {
-                    $output .= '                    
+                    $output .= ' 
+                    <div class="col-md-6">                   
                     <a href="'.route('details',[app()->getLocale(), $row->id] ).'" class="card mt-4">
                     <div class="card-body p-1">
                         <div class="row">
@@ -54,7 +55,7 @@ class searchController extends Controller
                             </div>
                         </div>
                     </div>
-                </a>';
+                </a></div>';
                 }
             }else{
                 $output = ' ';

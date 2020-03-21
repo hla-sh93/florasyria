@@ -21,7 +21,15 @@
 						@foreach($rand as $item)
 						
 						<div class="wrap-about-border ftco-animate">
-							<img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}">
+							<?php 
+							if(Voyager::image($item->img) =="" || Voyager::image($item->img) ==0 ) {  ?>
+							<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" >
+							<?php 
+							 } else { ?>
+							 
+							 <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}">
+					   <?php }?> 
+
 							<div class="text">
 								<h3>{{$item->species->name}} {{ $item->name}}</h3>
 								<p>{{ substr($item->desc,0,200 ) }} ...</p>
@@ -39,7 +47,14 @@
                         <div class="card-body p-1">
                             <div class="row">
                                 <div class="col-md-3 col-sm-6 align-items-center d-flex justify-content-center">
-                                    <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}"  width="90px" height="90px">
+									<?php 
+							if(Voyager::image($item->img) =="" || Voyager::image($item->img) ==0 ) {  ?>
+							<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
+							<?php 
+							 } else { ?>
+							 
+							 <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
+					   <?php }?> 
                                 </div>
                                 <div class="col-md-8 col-sm-6">
                                     <div class="row">
@@ -59,6 +74,8 @@
 					@endif
 					<!-- End Card No1-->
 					@endforeach
+					<p>{{$species->links()}}</p>
+					
 					</div>
 				</div>
 			</div>
@@ -147,3 +164,7 @@
     </section>
 
 	@endsection
+
+@section('footer')	
+	@include('layout.footerHome')
+@endsection

@@ -33,7 +33,14 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <img src="{{Voyager::image($item->img)}}" alt="{{$item->species->name}}" height="150px">
+                    <?php 
+                    if(Voyager::image($item->img) =="" || Voyager::image($item->img) ==0 ) {  ?>
+                    <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="150px">
+                    <?php 
+                     } else { ?>
+                     
+                     <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" height="150px">
+               <?php }?> 
                 </div>
             </div> <br> <br>
             <div class="row">
@@ -122,3 +129,8 @@
 
     @endsection
     @endforeach
+
+    
+@section('footer')	
+@include('layout.footer')
+@endsection

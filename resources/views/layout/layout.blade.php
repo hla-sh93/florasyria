@@ -4,23 +4,28 @@
     <title>{{env('APP_NAME','FloraSyria')}} | @yield('title') </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+  <meta name="description" content="{{setting('site.description')}}">
+    {{-- Style --}}
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{{asset('css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-    
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
-    @if(App::getLocale()=="ar"){
+    @if(App::getLocale()=="ar")
       <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    }@else{
+    @else
       <link rel="stylesheet" href="{{asset('css/enstyle.css')}}">
-    }
+    
     @endif
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+    {{-- FavIcon --}}
+    <link rel="apple-touch-icon"  href="{{setting('site.logo')}}">
+    <link rel="icon" type="image/png" href="{{setting('site.logo')}}">
+
+
   </head>
   <body>
     
@@ -61,27 +66,7 @@
 
     @yield('content')
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-
-          <div class="row">
-            <div class="col-md-2">
-              <div class="float-right">
-
-                <a href="{{route('changelang', ['lang' => 'ar'])}}"> AR <img src="{{asset('images/ar.png')}}" alt="arabic"> </a> | <a href="{{route('changelang', ['lang' => 'en'])}}"><img src="{{asset('images/en.png')}}" alt="arabic"> EN </a>
-              </div>
-            </div>
-            
-            <div class="col-md-10 text-center">
-  
-              <p>
-    &copy;{{ __('All rights reserved | This Website is made  by') }} <a href="#" target="_blank">FloraSyria</a> <script>document.write(new Date().getFullYear());</script>
-   </p>
-            </div>
-
-          </div>
-        </div>
-      </footer>
+    @yield('footer')
       
     
   

@@ -20,7 +20,7 @@ class advancedFilterController extends Controller
         $ecoValues=EcoValue::all();
         $areas=Area::all();
         $govs=Governorate::all();
-        $species=Species::paginate(5);
+        $species=Species::paginate(6);
 
         return view('advsearch',['lives' => $lives,
                                 'ecoValues' => $ecoValues,
@@ -73,10 +73,10 @@ class advancedFilterController extends Controller
 
         $data2 = DB::table('species As s')
         ->select('s.id as id','s.name as name','s.img as img','s.desc As desc','gen.name As Gname')
-        ->join('locations As l', 'l.id', '=', 's.location_id')
-        ->join('villages As v', 'v.id', '=', 'l.village_id')
-        ->join('cities As c', 'c.id', '=', 'v.city_id')
-        ->join('governorates As g', 'g.id', '=', 'c.gove_id')
+        // ->join('locations As l', 'l.id', '=', 's.location_id')
+        // ->join('villages As v', 'v.id', '=', 'l.village_id')
+        // ->join('cities As c', 'c.id', '=', 'v.city_id')
+        // ->join('governorates As g', 'g.id', '=', 'c.gove_id')
         ->join('genera As gen', 'gen.id', '=', 's.genus_id')
         ->where(function ($query) use ($filters) {
             if ($filters['flowring-start']) {
@@ -104,7 +104,7 @@ class advancedFilterController extends Controller
                  $query->Where('village_id', '=', $filters['villages']);
              }
           })
-        ->get();
+        ->simplePaginate(6);
 
         // $data2=  Species::with('species')
         //             ->Join('locations', 'species.location_id', '=', 'locations.id')

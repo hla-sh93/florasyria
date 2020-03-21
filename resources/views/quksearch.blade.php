@@ -48,8 +48,8 @@
             </div>
           </div>
           <div id="total_records"></div>
-            <div class="row d-flex">
-                <div class="col-md-6" id="flower_card"></div>
+            <div class="row d-flex" id="flower_card">>
+                
             </div>
         </div>
       </section>
@@ -103,3 +103,7 @@
         });
     </script>
     @endsection
+    
+@section('footer')	
+@include('layout.footer')
+@endsection

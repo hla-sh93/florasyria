@@ -151,6 +151,7 @@
                   @endforeach
                   
             </div>
+          <p>{{$species->links()}}</p>
         </div>
       </section>
 
@@ -187,3 +188,7 @@
         });
     </script>
     @endsection
+    
+@section('footer')	
+@include('layout.footer')
+@endsection
