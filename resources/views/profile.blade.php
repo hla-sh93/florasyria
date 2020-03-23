@@ -7,7 +7,7 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                  <h1 class="mt-2 bread"> Profilre</h1>
+                  <h1 class="mt-20 bread"> Profilre</h1>
             </div>
           </div>
         </div>

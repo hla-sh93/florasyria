@@ -31,7 +31,7 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light fixed-top" id="ftco-navbar">
         <a class="navbar-brand" href="#">
-            <img src="{{asset('images/logo-white.png')}}" width="90" height="50" alt="FloraSyria">
+            <img src="{{asset('images/logo-white.png')}}" alt="FloraSyria">
         </a> 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
