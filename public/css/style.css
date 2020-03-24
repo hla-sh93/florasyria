@@ -3451,7 +3451,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.5rem 1rem; }
+  padding: 0.5rem 0.5rem; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: -webkit-box;
@@ -8265,8 +8265,8 @@ h1, h2, h3, h4, h5,
     font-size: 16px;
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
     font-weight: 300;
     color: #fff;
     opacity: 1 !important; }
@@ -8859,7 +8859,7 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
-  padding: 7em 0;
+  padding: 2em 0;
   position: relative;
   direction: rtl; }
 
@@ -9782,4 +9782,16 @@ textarea.form-control {
   /* Background colors */
   .bg-alic{
     background-color: #f0f9fd;
+  }
+  .subhead{
+    font-size: 22pt;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 2pt;
+  }
+  .subhead span{
+    font-size: 23pt;
+    font-weight: 800;
+    color: #fff200;
+    letter-spacing: 4pt;
   }

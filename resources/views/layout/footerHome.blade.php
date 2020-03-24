@@ -2,12 +2,6 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-md-2">
-          <div class="float-right">
-
-            <a href="{{route('changelang', ['lang' => 'ar'])}}"> AR <img src="{{asset('images/ar.png')}}" alt="arabic"> </a> | <a href="{{route('changelang', ['lang' => 'en'])}}"><img src="{{asset('images/en.png')}}" alt="arabic"> EN </a>
-          </div>
-        </div>
         
         <div class="col-md-10 text-center">
 

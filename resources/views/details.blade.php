@@ -8,6 +8,7 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
               <h1 class="mb-2 bread">{{$item->species->name}} {{ $item->name}}</h1>
+              <h4 class="subhead"> <span>F</span>lora <span>S</span>yria <span>O</span>n <span>L</span>ine</h4>
             </div>
           </div>
         </div>
@@ -47,11 +48,15 @@
                 <div class="col-md-12">
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <h4>الاسم العلمي</h4>
                             <p class="text-justify"> {{$item->species->name}} {{ $item->name}}</p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <h4>الاسم المرادف</h4>
+                            <p class="text-justify"> {{$item->synonym}}</p>
+                        </div>
+                        <div class="col-md-4">
                             <h4>الاسم المحلي</h4>
                             <p class="text-justify"> {{$item->local}}</p>
                         </div>

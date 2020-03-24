@@ -7,7 +7,8 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-              <h1 class="mb-2 bread"> FSOL Quick Search</h1>
+              <h1 class="mb-2 bread">Quick Search</h1>
+              <h4 class="subhead"> <span>F</span>lora <span>S</span>yria <span>O</span>n <span>L</span>ine</h4>
             </div>
           </div>
         </div>
@@ -19,7 +20,7 @@
             <div class="col-md-12 mb-md-5">
 
                 <div class="form-row">
-                   <div class="col">
+                   <div class="col-md-6">
                     <div class="form-group">
                         <label for="Families">{{__('Families')}}</label>
                         <select class="form-control" id="Families" name="Families" >
@@ -30,7 +31,14 @@
                         </select>
                       </div>
                    </div>
-                   <div class="col">
+                   <div class="col-md-3 align-self-center offset-md-3">
+                    <div class="form-group">
+                      <a href="{{route('advsearch',app()->getLocale())}} " class="btn btn-success" style="padding:4px 60px; border-radius:5px;"> {{__('advanced search')}}</a>
+                  </div>
+                   </div>
+                  </div>
+                  <div class="form-row">
+                   <div class="col-md-6">
                     <div class="form-group">
                         <label for="Genera">{{__('Genera')}}</label>
                         <select class="form-control" id="Genera" name="Genera">
@@ -38,9 +46,6 @@
                         </select>
                       </div>
                    </div>
-                </div>
-                <div class="form-group">
-                    <a href="{{route('advsearch',app()->getLocale())}} " class="btn btn-success py-2 px-5 float-right" > {{__('advsearch')}}</a>
                 </div>
 
               </form>
