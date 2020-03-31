@@ -48,7 +48,25 @@
               </a>
               <!-- End Card No1-->
               @endforeach
-              </div>
+              </div> <hr>
+
+            <div class="col-md-12 ftco-animate">
+                <h2 class="mb-4">{{__('Useful Links')}}</h2>
+            </div>
+            <div class="row d-flex">
+                @foreach ($links as $link)
+                <div class="col-md-8">
+                <a href="{{$link->url}}" target="_blank">
+                    <div class="card m-2" style="background-color:#FAFAFf;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#333;"> {{$link->name}}</h5>
+                            <p class="card-text">{{$link->desc}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+                @endforeach   
+            </div>
         </div>
     </section>
     @endsection

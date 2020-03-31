@@ -10,6 +10,7 @@ use App\PlanetBiodiversity;
 use App\PreviousStudy;
 use App\FloranEndemism;
 use App\Species;
+use App\UsefulLink;
 
 class PagesController extends Controller
 {
@@ -30,7 +31,8 @@ class PagesController extends Controller
 
     public function publication (){
         $publications=Publication::all();
-        return view('publications', ['publications' => $publications]);
+        $links=UsefulLink::all();
+        return view('publications', ['publications' => $publications,'links'=>$links]);
     }
 
     public function soil (){
@@ -52,6 +54,10 @@ class PagesController extends Controller
     public function details ($language,$id){
         $spe=Species::where('id',$id)->get();
         return view('details',['spe' => $spe]);
+    }
+
+    public function map(){
+        return view('map');
     }
 
 }

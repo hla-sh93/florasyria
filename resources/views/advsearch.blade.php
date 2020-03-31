@@ -120,9 +120,8 @@
             
             </div>
           </div>
-
-            <div class="row d-flex">
-                
+          @if(isset($species)) 
+            <div class="row d-flex"> 
               @foreach ($species as $item)
                   <!-- Card No1-->
                   <div class="col-md-6  ftco-animate">
@@ -130,7 +129,11 @@
                       <div class="card-body">
                           <div class="row">
                               <div class="col-md-4 col-sm-6">
-                                  <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->Gname}} {{ $item->name}}" class=" mx-auto d-block" width="100px">
+                                @if($item->img == "") 
+                                <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->Gname}} {{ $item->name}}" class=" mx-auto d-block" width="100px">
+                                @else 
+                                <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->Gname}} {{ $item->name}}" class=" mx-auto d-block" width="100px">
+                                @endif
                               </div>
                               <div class="col-md-8 col-sm-6">
                                   <div class="row">
@@ -152,7 +155,9 @@
                   @endforeach
                   
             </div>
-          <p>{{$species->links()}}</p>
+          @else
+          <p> search anything you want ...</p>
+          @endif
         </div>
       </section>
 

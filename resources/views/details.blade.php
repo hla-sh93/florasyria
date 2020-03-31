@@ -33,15 +33,53 @@
                         @endif 
                     </p>
                 </div>
-                <div class="col-md-3">
-                    <?php 
-                    if(Voyager::image($item->img) =="" || Voyager::image($item->img) ==0 ) {  ?>
-                    <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="150px">
-                    <?php 
-                     } else { ?>
-                     
-                     <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" height="150px">
-               <?php }?> 
+                <div class="col-md-3" width="100%">
+                   
+                    {{-- SlideShow --}}
+                    @if(json_decode($item->imgs,true) != "")
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+                    
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            @if($item->img == "") 
+                            <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
+                            @else 
+                            <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
+                            @endif
+                        </div>
+                    
+                        @foreach (json_decode($item->imgs,true) as $im)
+                        <div class="carousel-item">
+                            <img src="{{Voyager::image($im) }}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
+                        </div>
+                        @endforeach
+                        </div>
+                    
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </a>
+                    
+                    </div>                    
+                    @else
+                    {{-- End SlidShow --}}
+                        @if($item->img == "") 
+                            <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
+                        @else 
+                            <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
+                        @endif
+                    @endif
                 </div>
             </div> <br> <br>
             <div class="row">
@@ -125,7 +163,7 @@
                             </p>
                         </div>
                     </div> <hr>
-
+                   
                 </div>
             </div>
         </div>

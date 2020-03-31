@@ -18,14 +18,12 @@
 						@foreach($rand as $item)
 						
 						<div class="wrap-about-border ftco-animate">
-							<?php 
-							if(Voyager::image($item->img) =="" || Voyager::image($item->img) ==0 ) {  ?>
+							
+							@if($item->img =="")
 							<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" >
-							<?php 
-							 } else { ?>
-							 
+							  @else 
 							 <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}">
-					   <?php }?> 
+					   		@endif
 
 							<div class="text">
 								<h3>{{$item->species->name}} {{ $item->name}}</h3>

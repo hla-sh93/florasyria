@@ -33,13 +33,18 @@ class searchController extends Controller
             $total_row = $data->count();
             if($total_row > 0) {
                 foreach($data as $row) {
+                    $img;
+                    if($row->img == "")
+                    $img=asset('images/defaul.jpg');
+                    else
+                    $img=Voyager::image( $row->img );
                     $output .= ' 
                     <div class="col-md-6">                   
                     <a href="'.route('details',[app()->getLocale(), $row->id] ).'" class="card mt-4">
                     <div class="card-body p-1">
                         <div class="row">
                             <div class="col-md-3 col-sm-6 align-items-center d-flex justify-content-center">
-                                <img src="'. Voyager::image( $row->img ) .'" alt="'.$row->species->name.' ' .$row->name.'"  width="90px" height="90px">
+                                <img src="'.$img.'" alt="'.$row->species->name.' ' .$row->name.'"  width="90px" height="90px">
                             </div>
                             <div class="col-md-8 col-sm-6">
                                 <div class="row">
