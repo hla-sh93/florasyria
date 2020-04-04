@@ -1,0 +1,15 @@
+.myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 200px;
+  height: 200px;
+  margin: 5px auto;
+  display: block;
+}
+
+.myImg:hover {opacity: 0.7;}
+
+.popup-img{
+  width: 100%;
+}

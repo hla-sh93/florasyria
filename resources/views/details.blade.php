@@ -16,156 +16,140 @@
 
     <section class="ftco-section">
         <div class="container">
-            <div class="row justify-content-center mb-2">
-                <div class="col-md-12 ftco-animate">
-                    <h2 class="mb-4 text-center heading-section">{{$item->species->name}} {{ $item->name}}</h2>
-				</div>
-			</div>
 			<div class="row">
-                <div class="col-md-9">
-                    <p class="text-justify">
-                        {{$item->desc}}
-                    </p>
-                    <p class="text-justify">
-                        @if( $item->reference_id !="")
-                        Reference:
-                        <a href="{{$item->reference->source}}" target="_blank">{{$item->reference->title}}</a>
-                        @endif 
-                    </p>
+                <div class="col-md-8">
+                        {{-- Row1 --}}
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>الاسم العلمي</h4>
+                                <p class="text-justify"> {{$item->species->name}} {{ $item->name}}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>الاسم المرادف</h4>
+                                <p class="text-justify"> {{$item->synonym}}</p>                                
+                            </div>
+                            <div class="col-md-4">
+                                <h4>الاسم المحلي</h4>
+                                <p class="text-justify"> {{$item->local}}</p>                                
+                            </div>
+                        </div>
+                        <br>
+                        {{-- Row2 --}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>الوصف</h4>
+                                <p class="text-justify">
+                                    {{$item->desc}}
+                                </p>
+                                <p class="text-justify">
+                                    @if( $item->reference_id !="")
+                                    Reference:
+                                    <a href="{{$item->reference->source}}" target="_blank">{{$item->reference->title}}</a>
+                                    @endif 
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        {{-- Row3 --}}
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>لون الزهرة</h4>
+                                <p class="text-justify"> {{$item->color}} </p>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>البيئة</h4>
+                                <p class="text-justify">{{$item->habitat}} </p>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>أشهر الإزهار</h4>
+                                <p class="text-justify">
+                                    @for($i=$item->start_flower; $i<=$item->end_flower;$i++)
+                                    {{$i.' '}}
+                                    @endfor
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        {{-- Row4 --}}
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>القيمة الاقتصادية</h4>
+                                <p class="text-justify">
+                                    @foreach ($item->ecovalue as $eco) 
+                                        {{$eco->ar_name}} ,
+                                    @endforeach                            
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>الانتماء الجغرافي </h4>
+                                <p class="text-justify">
+                                    @if( $item->area_id !="")
+                                    {{$item->area->name}}
+                                    @endif
+                                </p>                                
+                            </div>
+                            <div class="col-md-4">
+                                <h4>دورة الحياة</h4>
+                                <p class="text-justify"> 
+                                    @if( $item->life1_id !="")
+                                    {{$item->life_1->ar_name}}
+                                    @endif 
+                                    @if( $item->life2_id !="")
+                                    , {{$item->life_2->ar_name}}
+                                    @endif 
+                                </p>                                
+                            </div>
+                        </div>
+                        <br>
+                        {{-- Row5 --}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>المميزات</h4>
+                                <p class="text-justify"> {{$item->characterization}}</p>                                
+                            </div>
+                        </div>
+                        <br>
+                        {{-- Row6 --}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>التوزع في سورية حسب المناطق</h4>
+                                <p class="text-justify">
+                                    @if($item->location !="")
+                                        @foreach ($item->location as $loc) 
+                                            <p><strong>{{$loc->village->city->gov->name}} </strong>: {{$loc->village->city->name}} -> {{$loc->village->name}} -> {{$loc->name}}  </p>
+                                        @endforeach
+                                    @endif
+                                </p>
+                            </div>
+                        </div>
                 </div>
-                <div class="col-md-3" width="100%">
-                   
-                    {{-- SlideShow --}}
-                    @if(json_decode($item->imgs,true) != "")
-                    <div id="demo" class="carousel slide" data-ride="carousel">
+                <div class="col-md-4">
+                    @if($item->img == "") 
+                        <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="200px" width="200px" class="m-2 mx-auto d-block">
+                    @else 
+                        <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" class="myImg">
+                    @endif
 
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                        </ul>
-                    
-                        <!-- The slideshow -->
-                        <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            @if($item->img == "") 
-                            <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
-                            @else 
-                            <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
-                            @endif
-                        </div>
-                    
+                    @if($item->imgs !="")
                         @foreach (json_decode($item->imgs,true) as $im)
-                        <div class="carousel-item">
-                            <img src="{{Voyager::image($im) }}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
-                        </div>
-                        @endforeach
-                        </div>
-                    
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        </a>
-                    
-                    </div>                    
-                    @else
-                    {{-- End SlidShow --}}
-                        @if($item->img == "") 
-                            <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
-                        @else 
-                            <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" height="200px">
-                        @endif
+                        <img src="{{Voyager::image( $im ) }}" alt="{{$item->species->name}} {{ $item->name}}" class="myImg">
+                        @endforeach 
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                <img class="popup-img" src="" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div> 
                     @endif
                 </div>
-            </div> <br> <br>
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h4>الاسم العلمي</h4>
-                            <p class="text-justify"> {{$item->species->name}} {{ $item->name}}</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h4>الاسم المرادف</h4>
-                            <p class="text-justify"> {{$item->synonym}}</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h4>الاسم المحلي</h4>
-                            <p class="text-justify"> {{$item->local}}</p>
-                        </div>
-                    </div> <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>لون الزهرة</h4>
-                            <p class="text-justify"> {{$item->color}} </p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4>المميزات</h4>
-                            <p class="text-justify"> {{$item->characterization}}</p>
-                        </div>
-                    </div> <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>البيئة</h4>
-                            <p class="text-justify">{{$item->habitat}} </p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4>دورة الحياة</h4>
-                            <p class="text-justify"> 
-                                @if( $item->life1_id !="")
-                                {{$item->life_1->ar_name}}
-                                @endif 
-                                @if( $item->life2_id !="")
-                                , {{$item->life_2->ar_name}}
-                                @endif
-                                
-                            </p>
-                        </div>
-                    </div> <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>القيمة الاقتصادية</h4>
-                            <p class="text-justify">
-                                @if( $item->ecValue_id !="")
-                                {{$item->ecovalue->ar_name}}
-                                @endif                                
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4>الانتماء الجغرافي </h4>
-                            <p class="text-justify">
-                                @if( $item->area_id !="")
-                                {{$item->area->name}}
-                                @endif
-                            </p>
-                        </div>
-                    </div> <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>التوزع في سورية حسب المناطق</h4>
-                            <p class="text-justify">
-                                @if( $item->location_id !="")
-                                {{$item->location->name}}
-                                @endif
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4>أشهر الإزهار</h4>
-                            <p class="text-justify">
-                                @for($i=$item->start_flower; $i<=$item->end_flower;$i++)
-                                {{$i.' '}}
-                                @endfor
-                            </p>
-                        </div>
-                    </div> <hr>
-                   
-                </div>
-            </div>
+			</div>   
         </div>
     </section>
 

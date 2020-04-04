@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
+    
     @if(App::getLocale()=="ar")
       <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @else
@@ -20,7 +21,8 @@
     
     @endif
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-
+    
+    <link rel="stylesheet" href="{{asset('css/imageopen.css')}}">
     {{-- FavIcon --}}
     <link rel="apple-touch-icon"  href="{{setting('site.logo')}}">
     <link rel="icon" type="image/png" href="{{setting('site.logo')}}">
@@ -89,6 +91,7 @@
     <script src="{{asset('js/jquery.animateNumber.min.js')}}"></script>
     <script src="{{asset('js/scrollax.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/imageopen.js')}}"></script>
 
     @yield('script')
       

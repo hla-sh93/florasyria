@@ -15,7 +15,7 @@ class HomePageController extends Controller
         $vision = Vision::find('1')->get();
         $howToHelp = HowToHelp::find('1')->get();
         $sponsoros = Sponsor::all();
-        $species = Species::simplePaginate(4);
+        $species = Species::where('start_flower', '<=', date('m'))->where('end_flower', '>=', date('m'))->simplePaginate(4);
         $rand = Species::all()->random(1);
 
         return view('index', ['vision' => $vision, 'howToHelp' => $howToHelp, 'sponsors' => $sponsoros,'species'=>$species,'rand'=>$rand]);

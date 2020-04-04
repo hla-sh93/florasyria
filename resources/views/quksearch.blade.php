@@ -16,11 +16,11 @@
 
       <section class="ftco-section contact-section">
         <div class="container">
-          <div class="row block-9 mb-5">
-            <div class="col-md-12 mb-md-5">
+          <div class="row block-9">
 
+            <div class="col-md-9 mb-md-5">
                 <div class="form-row">
-                   <div class="col-md-6">
+                   <div class="col-md-9">
                     <div class="form-group">
                         <label for="Families">{{__('Families')}}</label>
                         <select class="form-control" id="Families" name="Families" >
@@ -31,14 +31,10 @@
                         </select>
                       </div>
                    </div>
-                   <div class="col-md-3 align-self-center offset-md-3">
-                    <div class="form-group">
-                      <a href="{{route('advsearch',app()->getLocale())}} " class="btn btn-success" style="padding:4px 60px; border-radius:5px;"> {{__('advanced search')}}</a>
                   </div>
-                   </div>
-                  </div>
+
                   <div class="form-row">
-                   <div class="col-md-6">
+                   <div class="col-md-9">
                     <div class="form-group">
                         <label for="Genera">{{__('Genera')}}</label>
                         <select class="form-control" id="Genera" name="Genera">
@@ -47,13 +43,14 @@
                       </div>
                    </div>
                 </div>
+            </div>
 
-              </form>
-            
+            <div class="col-md-3">
+              <a href="{{route('advsearch',app()->getLocale())}} " class="btn btn-success" style="padding:4px 60px; border-radius:5px;"> {{__('advanced search')}}</a>
             </div>
           </div>
           <div id="total_records"></div>
-            <div class="row d-flex" id="flower_card">>
+            <div class="row d-flex" id="flower_card">
                 
             </div>
         </div>

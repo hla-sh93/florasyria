@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Governorate extends Model
+class SpeciesLocation extends Model
 {
-
+    public $timestamps = false;
 }

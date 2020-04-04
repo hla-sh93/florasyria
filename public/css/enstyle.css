@@ -8416,7 +8416,7 @@ h1, h2, h3, h4, h5,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .9;
+    opacity: .7;
     background: #1566ad;
     background: -moz-linear-gradient(left, #1566ad 0%, #1b9de3 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #1566ad), color-stop(100%, #1b9de3));
@@ -9785,14 +9785,16 @@ textarea.form-control {
     background-color: #f0f9fd;
   }
   .subhead{
-    font-size: 22pt;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 2pt;
-  }
-  .subhead span{
     font-size: 23pt;
     font-weight: 800;
+    color: #fff;
+    letter-spacing: 1pt;
+    font-family:'Arial Narrow', Arial, sans-serif;
+  }
+  .subhead span{
+    font-size: 24pt;
+    font-weight: 800;
     color: #fff200;
-    letter-spacing: 4pt;
+    letter-spacing: 2pt;
+    
   }

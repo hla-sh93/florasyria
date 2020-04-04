@@ -23,7 +23,7 @@ class Species extends Model
     }
     public function ecovalue()
     {
-        return $this->belongsTo('App\EcoValue', 'ecValue_id');
+        return $this->belongsToMany('App\EcoValue','species_ecoval');
     }
     public function area()
     {
@@ -31,7 +31,7 @@ class Species extends Model
     }
     public function location()
     {
-        return $this->belongsTo('App\Location', 'location_id');
+        return $this->belongsToMany('App\Location','species_locations');
     }
     public function reference()
     {

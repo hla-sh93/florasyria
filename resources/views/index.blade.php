@@ -42,14 +42,11 @@
                         <div class="card-body p-1">
                             <div class="row">
                                 <div class="col-md-3 col-sm-6 align-items-center d-flex justify-content-center">
-									<?php 
-							if(Voyager::image($item->img) =="" || Voyager::image($item->img) ==0 ) {  ?>
-							<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
-							<?php 
-							 } else { ?>
-							 
-							 <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
-					   <?php }?> 
+									@if ($item->img == "")
+										<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
+									@else
+										<img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
+									@endif
                                 </div>
                                 <div class="col-md-8 col-sm-6">
                                     <div class="row">
