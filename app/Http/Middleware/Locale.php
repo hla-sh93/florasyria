@@ -19,7 +19,7 @@ class Locale
     {
         if ($request->method() === 'GET') {
             $segment = $request->segment(1);
-        
+            
             if (!in_array($segment, ['ar','en'])) {
                 $segments = $request->segments();
                 $fallback = session('locale') ?: config('app.fallback_locale');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UtilsController extends Controller
 {
@@ -14,10 +15,16 @@ class UtilsController extends Controller
         }
         session()->put('locale', $lang);
         app()->setLocale($lang);
-        $route = app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName();
-        // if ($route === 'cvBuilder') {
-        //     return redirect("/$locale/cv/new");
-        // }
-        return redirect()->route($route);
+        //$route = app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName();
+        
+        // return redirect()->route($route);
+        $r=url()->previous();
+        if(str_contains($r, 'en')){
+            $n=str_replace('en','ar',url()->previous());
+            return redirect()->to($n);
+        }else{
+            $n=str_replace('ar','en',url()->previous());
+            return redirect()->to($n);
+        }
     }
 }
