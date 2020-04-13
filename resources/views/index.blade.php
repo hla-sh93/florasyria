@@ -2,6 +2,7 @@
 @section('title','Home')
     @section('content')
 
+@if($header =="")
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image:url(images/bg_1.jpg);">
 		  <div class="overlay"></div>
@@ -10,7 +11,16 @@
 		<div class="overlay"></div>
 	</div>
     </section>
-
+@else
+	<section class="home-slider owl-carousel">
+		@foreach (json_decode($header,true) as $im)
+		<div class="slider-item" style="background-image:url('{{Voyager::image( $im ) }}');">
+			<div class="overlay"></div>
+		</div>
+		@endforeach 
+	</div>
+	</section>
+  @endif
 		<section class="ftco-section">
 			<div class="container">
 				<div class="row d-flex">
@@ -143,7 +153,7 @@
 				<a href="{{$sponsor->url}}" target="_blank">
 					<div class="item">
 					<div class="testimony-wrap d-flex">
-						<img src="{{Voyager::image($sponsor->img)}}" class="sponser-img" alt="{{$sponsor->name}}">
+						<img src="{{Voyager::image($sponsor->img)}}" class="sponser-img mx-auto d-block" alt="{{$sponsor->name}}" width="100%">
 					</div>
 					</div>
 				</a>

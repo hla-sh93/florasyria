@@ -51,7 +51,7 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
     Route::get('/advsearchfetch', 'advancedFilterController@fetch');
     Route::post('/advsearch', 'advancedFilterController@search')->name('advsearch');
 
-    Route::get('/map', 'PagesController@map')->name('map');
+    Route::get('/map', 'floramapcontroller@index')->name('map');
     
 
 });

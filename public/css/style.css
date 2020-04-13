@@ -3470,7 +3470,7 @@ input[type="button"].btn-block {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap; }
@@ -9204,11 +9204,11 @@ textarea.form-control {
   position: relative;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(0, 0, 0, 0.8);
-  border: 3px solid #f0f0f0;
-  padding: 20px; }
+  /* border: 3px solid #f0f0f0; */
+  padding: 10px; }
   .testimony-wrap .sponser-img {
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    height: auto;
     border-radius: 50%;
     position: relative; }
   .testimony-wrap .text {
@@ -9797,3 +9797,36 @@ textarea.form-control {
     letter-spacing: 2pt;
     
   }
+  
+  /* Navbar */
+  @media (min-width: 1040px) {
+    .ftco-navbar-light {
+      background: #59ca75 !important;
+      z-index: 3;
+      padding: 0;
+      height: 120px;
+      }
+
+    .navbar-expand-lg  .navbar-collapse {
+        margin-top:30px;
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto; 
+    } 
+    .owl-carousel.home-slider{
+      margin-top:55px;
+    }
+    .ftco-navbar-light .navbar-nav > .nav-item > .nav-link{
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .nav-item a img:hover{
+      color:#fff;
+      opacity: 0.8;
+    }
+    .hero-wrap.hero-wrap-2 {
+      margin-top: 115px;
+    }
+    }

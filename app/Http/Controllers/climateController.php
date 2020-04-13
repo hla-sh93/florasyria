@@ -8,10 +8,11 @@ use App\Rainfall;
 use App\Temperature;
 use App\Evaporation;
 use App\BioClimatic;
-
+use DB;
 class climateController extends Controller
 {
     public function index(){
+        $header=DB::table('header_images')->value('climate');
 
         $topography = Topography::find('1')->get();
         $rainfall = Rainfall::find('1')->get();
@@ -24,7 +25,8 @@ class climateController extends Controller
             'rainfall' => $rainfall,
             'temperature' => $temperature,
             'evaporation' => $evaporation,
-            'bioclimatic' => $bioclimatic
+            'bioclimatic' => $bioclimatic,
+            'header' => $header
               ]);
     }
 }

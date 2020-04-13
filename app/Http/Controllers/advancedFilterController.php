@@ -133,7 +133,7 @@ class advancedFilterController extends Controller
         // if (request()->has('villages')){
         //     $data2 = $data2->Where('village_id', '=', $filters['villages']);
         // }
-        $data2 = $data2->get();
+        $data2 = $data2->orderBy('Gname', 'asc')->get();
         
         $lives=Life::all();
         $ecoValues=EcoValue::all();

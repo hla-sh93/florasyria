@@ -24,10 +24,14 @@
                                 <h4>الاسم العلمي</h4>
                                 <p class="text-justify"> {{$item->species->name}} {{ $item->name}}</p>
                             </div>
+                            
                             <div class="col-md-4">
+                                @if($item->synonym !="")
                                 <h4>الاسم المرادف</h4>
-                                <p class="text-justify"> {{$item->synonym}}</p>                                
+                                <p class="text-justify"> {{$item->synonym}}</p> 
+                                @endif                               
                             </div>
+                            
                             <div class="col-md-4">
                                 <h4>الاسم المحلي</h4>
                                 <p class="text-justify"> {{$item->local}}</p>                                

@@ -43,11 +43,21 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item {{ Request::path()=='/' ? 'active' : ''}}"><a href="/" class="nav-link pl-0">{{ __('Home') }}</a></li>
-            <li class="nav-item {{ Request::path()=='about' ? 'active' : ''}}"><a href="{{route('about',app()->getLocale())}}" class="nav-link">{{ __('founder') }}</a></li>
-            <li class="nav-item {{ Request::path()=='topography' ? 'active' : ''}} dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{__('syria')}} 
+            <li class="nav-item"><a href="/" class="nav-link pl-0">
+            <img src="{{asset('images/nav/nav1.png')}}" alt="{{ __('home') }}">
+            </a></li>
+
+            <li class="nav-item"><a href="{{route('about',app()->getLocale())}}" class="nav-link">
+              <img src="{{asset('images/nav/nav2.png')}}" alt="{{ __('founder') }}">
+            </a></li>
+
+            <li class="nav-item"><a href="{{route('map',app()->getLocale())}}" class="nav-link">
+              <img src="{{asset('images/nav/nav8.png')}}" alt="{{ __('map') }}">
+            </a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{asset('images/nav/nav3.png')}}" alt="{{__('syria')}}">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{route('topography',app()->getLocale())}} ">{{__('Climate and Topography')}}</a>
@@ -56,12 +66,24 @@
                 <a class="dropdown-item" href="{{route('flora',app()->getLocale())}} "> {{ __('Flora') }}</a>
               </div>
             </li>
-            <li class="nav-item {{ Request::path()=='team' ? 'active' : ''}}"><a href="{{route('team',app()->getLocale())}}" class="nav-link"> {{ __('team') }}</a></li>
-            <li class="nav-item {{ Request::path()=='publications' ? 'active' : ''}}"><a href="{{route('publications',app()->getLocale())}}" class="nav-link">{{ __('publications') }}</a></li>
-	        	<li class="nav-item {{ Request::path()=='advsearch' ? 'active' : ''}}"><a href="{{route('search',app()->getLocale())}} " class="nav-link">{{ __('Search') }}</a></li>
-            <li class="nav-item {{ Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact',app()->getLocale())}} " class="nav-link">{{ __('contact') }}</a></li>
+
+            <li class="nav-item"><a href="{{route('team',app()->getLocale())}}" class="nav-link">
+              <img src="{{asset('images/nav/nav4.png')}}" alt="{{ __('team') }}">
+            </a></li>
+
+            <li class="nav-item"><a href="{{route('publications',app()->getLocale())}}" class="nav-link">
+              <img src="{{asset('images/nav/nav5.png')}}" alt="{{ __('Publications & UsefulLinks') }}"> 
+            </a></li>
+
+            <li class="nav-item"><a href="{{route('search',app()->getLocale())}} " class="nav-link">
+              <img src="{{asset('images/nav/nav6.png')}}" alt="{{ __('Search') }}">
+            </a></li>
+
+            <li class="nav-item"><a href="{{route('contact',app()->getLocale())}} " class="nav-link">
+              <img src="{{asset('images/nav/nav7.png')}}" alt="{{ __('contact') }}">
+            </a></li>
           </ul>
-          <span class="navbar-text mr-2"><a href="{{route('changelang', ['lang' => 'ar'])}}"><img src="{{asset('images/ar.png')}}" alt="arabic"> </a> | <a href="{{route('changelang', ['lang' => 'en'])}}"><img src="{{asset('images/en.png')}}" alt="english"></a></span>
+          <span class="navbar-text mx-2"><a href="{{route('changelang', ['lang' => 'ar'])}}"><img src="{{asset('images/ar.png')}}" alt="arabic"> </a> | <a href="{{route('changelang', ['lang' => 'en'])}}"><img src="{{asset('images/en.png')}}" alt="english"></a></span>
 	        
 	      </div>
 
@@ -92,7 +114,6 @@
     <script src="{{asset('js/scrollax.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/imageopen.js')}}"></script>
-
     @yield('script')
       
     </body>

@@ -2,7 +2,7 @@
 @section('title','Contact')
     @section('content')
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_1.jpg');">
+    <section class="hero-wrap hero-wrap-2" @if($header !="") style="background-image:url('{{Voyager::image($header)}}')" @else style="background-image: url('/images/bg_1.jpg');" @endif>
         <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -30,13 +30,13 @@
                         <div class="icon">
                             <span class="icon-mobile-phone"></span>
                         </div>
-                      <p><span>{{__('Phone:')}}</span> <a href="tel://+963 944 718291">+ 963 944 718291</a></p>
+                      <p><span>{{__('Mobile:')}}</span> <a href="tel://+963 944 718291">+ 963 944 718291</a></p>
                     </div>
                     <div class="col-md-4 text-center py-4">
                         <div class="icon">
                             <span class="icon-envelope-o"></span>
                         </div>
-                      <p><span>{{__('Email:')}}</span> <a href="mailto:mchikh@aloola.sy">mchikh@aloola.sy</a></p>
+                      <p><span>{{__('Email:')}}</span> <a href="mchikh@scs-net.org">mchikh@scs-net.org</a></p>
                     </div>
                   </div>
             </div>

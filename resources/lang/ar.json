@@ -34,7 +34,7 @@
     "Search":"بحث",
 
     "Address:":"العنوان",
-    "Phone:":"هاتف",
+    "Mobile:":"موبايل",
     "Email:":"بريد الكتروني",
     "Or you can send us a message right here":"أو يمكنك إرسال رسالة لنا من هنا",
     "your Name":"الاسم",
@@ -52,5 +52,6 @@
     "Syria Soil" : "التربة في سورية",
     "Vegetation zones" : "مناطق الغطاء النباتي",
     "Previous Studies" : "دراسات سابقة",
-    "Useful Links" : "روابط مفيدة"
+    "Useful Links" : "روابط مفيدة",
+    "Publications & UsefulLinks" : "منشورات وروابط مفيدة"
 }

@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
+use DB;
 class ContactFormController extends Controller
 {
     public function create(){
-        return view('contact.contact');
+        $header=DB::table('header_images')->value('contact');
+        return view('contact.contact',['header'=> $header]);
     }
 
     public function store(Request $request){

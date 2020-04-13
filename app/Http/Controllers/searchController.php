@@ -7,16 +7,18 @@ use App\Family;
 use App\Genus;
 use App\Species;
 use Voyager;
+use DB;
 
 class searchController extends Controller
 {
     public function filter(){
-        $families=Family::all();
-        return view('quksearch',['families' => $families]);
+        $header=DB::table('header_images')->value('search');
+        $families=DB::table('families')->orderBy('name', 'asc')->get();
+        return view('quksearch',['families' => $families,'header' => $header]);
     }
 
     public function genera($lang,$id)  {
-        $gen=Genus::select('name','id')->where('family_id', $id)->get();
+        $gen=Genus::select('name','id')->where('family_id', $id)->orderBy('name', 'asc')->get();
         return $gen->toJson();
     }
 
