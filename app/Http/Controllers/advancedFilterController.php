@@ -70,70 +70,49 @@ class advancedFilterController extends Controller
                    'cities' => $request->input('cities'),
                    'villages' => $request->input('villages')
         ];
+        // dd($filters);
 
-        // $data2 = DB::table('species As s')
-        // ->select('s.id as id','s.name as name','s.img as img','s.desc As desc','gen.name As Gname')
-        // ->join('locations As l', 'l.id', '=', 's.location_id')
-        // ->join('villages As v', 'v.id', '=', 'l.village_id')
-        // ->join('cities As c', 'c.id', '=', 'v.city_id')
-        // ->join('governorates As g', 'g.id', '=', 'c.gove_id')
-        // ->join('genera As gen', 'gen.id', '=', 's.genus_id')
-        // ->where(function ($query) use ($filters) {
-        //     if ($filters['flowring-start']) {
-        //           $query->Where('start_flower', '=', $filters['flowring-start']);
-        //       }
-        //        if ($filters['flowring-end']) {
-        //           $query->Where('end_flower', '=', $filters['flowring-end']);
-        //       }
-        //       if ($filters['life']) {
-        //           $query->Where('life1_id', '=', $filters['life'])->orWhere('life2_id', '=', $filters['life']);
-        //       }
-        //       if ($filters['econ_value']) {
-        //           $query->Where('ecValue_id', '=', $filters['econ_value']);
-        //       }
-        //       if ($filters['areas']) {
-        //           $query->Where('area_id', '=', $filters['areas']);
-        //       }
-        //       if ($filters['governorates']) {
-        //          $query->Where('gove_id', '=', $filters['governorates']);
-        //      }
-        //      if ($filters['cities']) {
-        //          $query->Where('city_id', '=', $filters['cities']);
-        //      }
-        //      if ($filters['villages']) {
-        //          $query->Where('village_id', '=', $filters['villages']);
-        //      }
-        //   })->paginate(6)->appends($filters);
 
         $data2 = DB::table('species As s')
+        ->join('genera As gen', 'gen.id', '=', 's.genus_id')
         ->select('s.id as id','s.name as name','s.img as img','s.desc As desc','gen.name As Gname')
-        ->join('genera As gen', 'gen.id', '=', 's.genus_id');
+        ->leftJoin('species_ecoval', 's.id', '=', 'species_ecoval.species_id')
+        ->leftJoin('species_locations', 's.id', '=', 'species_locations.species_id')
+        ->leftJoin('locations', 'locations.id', '=', 'species_locations.location_id')
+        ->leftJoin('villages', 'villages.id', '=', 'locations.village_id')
+        ->leftJoin('cities', 'cities.id', '=', 'villages.city_id')
+        ->leftJoin('governorates', 'governorates.id', '=', 'cities.gove_id')
+        ->Where(function($query) use ($filters) {
 
-        if ($request->input('flowring-start')){
-            $data2->Where('start_flower', '=', $filters['flowring-start']);
-        }
-        if ($request->input('flowring-end')){
-            $data2->Where('end_flower', '=', $filters['flowring-end']);
-        }
-        if ($request->input('life')){
-            $data2->Where('life1_id', '=', $filters['life'])->orWhere('life2_id', '=', $filters['life']);
-        }
-        if ($request->input('econ_value')){
-            $data2->Where('ecValue_id', '=', $filters['econ_value']);
-        }
-        if ($request->input('areas')){
-            $data2->Where('area_id', '=', $filters['areas']);
-        }
-        // if (request()->has('governorates')){
-        //     $data2 = $data2->Where('gove_id', '=', $filters['governorates']);
-        // }
-        // if (request()->has('cities')){
-        //     $data2 = $data2->Where('city_id', '=', $filters['cities']);
-        // }
-        // if (request()->has('villages')){
-        //     $data2 = $data2->Where('village_id', '=', $filters['villages']);
-        // }
-        $data2 = $data2->orderBy('Gname', 'asc')->get();
+            if ($filters['flowring-start']) {
+                $query->Where('start_flower', $filters['flowring-start']);
+            }
+            if ($filters['flowring-end']) {
+                $query->Where('end_flower', $filters['flowring-end']);
+            }
+            if ($filters['life']) {
+                $query->Where('life1_id', $filters['life'])->orWhere('life2_id', $filters['life']);
+            }
+            if ($filters['areas']) {
+                $query->Where('area_id', $filters['areas']);
+            }
+            if($filters['econ_value']){
+                $query->where('species_ecoval.eco_value_id', '=', $filters['econ_value']);
+            }
+            if($filters['governorates']){
+                $query->where('governorates.id', '=', $filters['governorates']);
+            }
+            if($filters['cities']){
+                $query->where('cities.id', '=', $filters['cities']);
+            }
+            if($filters['villages']){
+                $query->where('villages.id', '=', $filters['villages']);
+            }
+            });
+
+            $data2 = $data2 ->groupBy('s.id')->orderBy('Gname')->get();
+
+        // dd($data2);
         
         $lives=Life::all();
         $ecoValues=EcoValue::all();
@@ -144,7 +123,7 @@ class advancedFilterController extends Controller
                                 'ecoValues' => $ecoValues,
                                 'areas' => $areas,
                                 'govs' => $govs,
-                                'species' => $data2,
+                                'species' => $data2
         ]);
     }
 }

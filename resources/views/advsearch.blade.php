@@ -120,6 +120,7 @@
             
             </div>
           </div>
+
           @if(isset($species)) 
             <div class="row d-flex"> 
               @foreach ($species as $item)

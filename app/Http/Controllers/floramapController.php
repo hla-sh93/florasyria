@@ -13,7 +13,7 @@ class floramapController extends Controller
 {
     public function index(){
         $header=DB::table('header_images')->value('map');
-        $map=Floramap::get();
+        $map=Floramap::all();
         $families=Family::all()->count();
         $genus=Genus::all()->count();
         $species=Species::all()->count();

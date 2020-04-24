@@ -47,14 +47,6 @@
             <img src="{{asset('images/nav/nav1.png')}}" alt="{{ __('home') }}">
             </a></li>
 
-            <li class="nav-item"><a href="{{route('about',app()->getLocale())}}" class="nav-link">
-              <img src="{{asset('images/nav/nav2.png')}}" alt="{{ __('founder') }}">
-            </a></li>
-
-            <li class="nav-item"><a href="{{route('map',app()->getLocale())}}" class="nav-link">
-              <img src="{{asset('images/nav/nav8.png')}}" alt="{{ __('map') }}">
-            </a></li>
-
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="{{asset('images/nav/nav3.png')}}" alt="{{__('syria')}}">
@@ -67,12 +59,17 @@
               </div>
             </li>
 
+            
+            <li class="nav-item"><a href="{{route('map',app()->getLocale())}}" class="nav-link">
+              <img src="{{asset('images/nav/nav2.png')}}" alt="{{ __('map') }}">
+            </a></li>
+
             <li class="nav-item"><a href="{{route('team',app()->getLocale())}}" class="nav-link">
               <img src="{{asset('images/nav/nav4.png')}}" alt="{{ __('team') }}">
             </a></li>
 
-            <li class="nav-item"><a href="{{route('publications',app()->getLocale())}}" class="nav-link">
-              <img src="{{asset('images/nav/nav5.png')}}" alt="{{ __('Publications & UsefulLinks') }}"> 
+            <li class="nav-item"><a href="{{route('about',app()->getLocale())}}" class="nav-link">
+              <img src="{{asset('images/nav/nav5.png')}}" alt="{{ __('founder') }}">
             </a></li>
 
             <li class="nav-item"><a href="{{route('search',app()->getLocale())}} " class="nav-link">
@@ -81,6 +78,10 @@
 
             <li class="nav-item"><a href="{{route('contact',app()->getLocale())}} " class="nav-link">
               <img src="{{asset('images/nav/nav7.png')}}" alt="{{ __('contact') }}">
+            </a></li>
+
+            <li class="nav-item"><a href="{{route('publications',app()->getLocale())}}" class="nav-link">
+              <img src="{{asset('images/nav/nav8.png')}}" alt="{{ __('Publications & UsefulLinks') }}"> 
             </a></li>
           </ul>
           <span class="navbar-text mx-2"><a href="{{route('changelang', ['lang' => 'ar'])}}"><img src="{{asset('images/ar.png')}}" alt="arabic"> </a> | <a href="{{route('changelang', ['lang' => 'en'])}}"><img src="{{asset('images/en.png')}}" alt="english"></a></span>

@@ -68,14 +68,17 @@ class searchController extends Controller
                 $output = ' ';
                 }
 
-      $data = array(
-       'table_data'  => $output,
-       'total_data'  => $total_row
-      );
+    //   $data = array(
+    //    'table_data'  => $output,
+    //    'total_data'  => $total_row
+    //   );
         
-      echo json_encode($data);   
+      echo($output);   
+        }
     }
 
-
-}
+    // public function species($lang,$id)  {
+    //     $data = Species::where('genus_id', $id)->orderBy('name', 'asc')->get();
+    //     return $data->toJson();
+    // }
 }

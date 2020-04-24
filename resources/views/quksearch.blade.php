@@ -43,6 +43,7 @@
                       </div>
                    </div>
                 </div>
+                
             </div>
 
             <div class="col-md-3">
@@ -51,7 +52,7 @@
           </div>
           <div id="total_records"></div>
             <div class="row d-flex" id="flower_card">
-                
+
             </div>
         </div>
       </section>
@@ -70,17 +71,21 @@
                   method:"GET",
                   dataType:"json",
                   success:function(data){
-                    // console.log(data)
+                    console.log(data)
                     $('select[name="Genera"]').empty();
                     $('select[name="Genera"]').append('<option value="">Choose Genus</option>');
                     $.each(data,function(key,value){
                       $('select[name="Genera"]').append('<option value="'+value.id+'">'+value.name+'</option>');
                     });
+                  },
+                  error: function(jqxhr, status, exception) {
+                    alert('Exception:', exception);
                   }
-                })
+                });
 
               } else{
                 $('select[name="Genera"]').empty();
+                $('#flower_card').empty();
               }
           });
 
@@ -90,17 +95,22 @@
                 url:"searchspecies",
                 method:'GET',
                 data:{genera_id:genera_id},
-                dataType:'json',
+                dataType:'html',
                 success:function(data){
-                  $('#flower_card').html(data.table_data);
-                  $('#total_records').html('عدد النتائج : '+data.total_data);
+                  $('#flower_card').html(data);
+                  // $('#total_records').html('عدد النتائج : '+data.total_data);
                   }
                 });
               }
 
-              $(document).on('change', '#Genera', function(){
+              $('select[name="Genera"]').on('change', function(){
                 var genera_id = $(this).val();
-                findSpecies(genera_id);
+                if(genera_id){
+                  findSpecies(genera_id);
+                }else{
+                  $('#flower_card').empty();
+                }
+                
               });
         });
     </script>
