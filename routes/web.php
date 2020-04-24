@@ -52,6 +52,8 @@ Route::prefix('{language?}')->middleware('locale')->group( function(){
     Route::post('/advsearch', 'advancedFilterController@search')->name('advsearch');
 
     Route::get('/map', 'floramapcontroller@index')->name('map');
+    Route::get('/sort', 'sortspeciesController@index')->name('sort');
+    Route::get('/deletesort/{id}', 'sortspeciesController@delete')->name('sort.delete');
     
 
 });
