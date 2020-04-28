@@ -45,7 +45,7 @@
                 @foreach($s as $item)
               <tr>
               <th scope="row"> {{$item->id}} </th>
-                <td>{{$item->species->name}}</td>
+                <td>{{$item->species['name']}}</td>
                 <td>{{ $item->name}}</td>
                 <td>
                     @foreach ($item->ecovalue as $eco) 
