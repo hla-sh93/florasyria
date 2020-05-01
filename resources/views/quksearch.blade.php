@@ -94,11 +94,14 @@
                 $.ajax({
                 url:"searchspecies",
                 method:'GET',
-                data:{genera_id:genera_id},
                 dataType:'html',
+                data:{genera_id:genera_id},
                 success:function(data){
+                  
                   $('#flower_card').html(data);
-                  // $('#total_records').html('عدد النتائج : '+data.total_data);
+                  var dataCount=$('#countdiv').data('count');
+                  if(dataCount){
+                  $('#total_records').html('عدد النتائج : '+dataCount);}
                   }
                 });
               }

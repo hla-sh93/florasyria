@@ -44,13 +44,7 @@
                                 <h4>الوصف</h4>
                                 <p class="text-justify">
                                     {{$item->desc}}
-                                </p>
-                                <p class="text-justify">
-                                    @if( $item->reference_id !="")
-                                    Reference:
-                                    <a href="{{$item->reference->source}}" target="_blank">{{$item->reference->title}}</a>
-                                    @endif 
-                                </p>
+                                </p>                              
                             </div>
                         </div>
                         <br>
@@ -126,24 +120,40 @@
                                 </p>
                             </div>
                         </div>
+                        {{-- row 7 --}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if( $item->reference_id !="")
+                                <h4>المراجع</h4>
+                                <p class="text-justify">
+                                    Reference:
+                                    <a href="{{$item->reference->source}}" target="_blank">{{$item->reference->title}}</a>
+                                </p>
+                                @endif 
+                            </div>
+                        </div>
                 </div>
                 <div class="col-md-4">
                     @if($item->img == "") 
                         <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="200px" width="200px" class="m-2 mx-auto d-block">
                     @else 
-                        <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" class="myImg">
+                        <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" class="myImg" data-title="{{ $item->img_title}}">
                     @endif
 
                     @if($item->imgs !="")
                         @foreach (json_decode($item->imgs,true) as $im)
-                        <img src="{{Voyager::image( $im ) }}" alt="{{$item->species->name}} {{ $item->name}}" class="myImg">
+                        <img src="{{Voyager::image( $im ) }}" class="myImg" data-title="{{ $item->img_title}}" alt="{{$item->species->name}} {{ $item->name}}">
                         @endforeach 
+                        @endif
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
                             <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
+                                <div class="modal-header bg-primary align-items-center justify-content-center" >
+                                    <p class="text-white text-center img_title"></p>
+                                </div>
                                 <div class="modal-body">
-                                <img class="popup-img" src="" alt="">
+                                <img class="popup-img" src="" alt="" >
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -151,7 +161,7 @@
                             </div>
                             </div>
                         </div> 
-                    @endif
+                    
                 </div>
 			</div>   
         </div>

@@ -15,7 +15,7 @@ class sortspeciesController extends Controller
     $families=Family::all()->count();
     $genus=Genus::all()->count();
     $species=Species::all()->count();
-    $s=Species::orderBy('genus_id', 'asc')->orderBy('name', 'asc')->paginate(50);
+    $s=Species::orderBy('id', 'asc')->paginate(50);
 
        return view('sortspeacies',[
                     'families' => $families,

@@ -41,7 +41,7 @@ class searchController extends Controller
                     else
                     $img=Voyager::image( $row->img );
                     $output .= ' 
-                    <div class="col-md-6">                   
+                    <div class="col-md-6" data-count='.$total_row.' id="countdiv">                   
                     <a href="'.route('details',[app()->getLocale(), $row->id] ).'" class="card mt-4">
                     <div class="card-body p-1">
                         <div class="row">
@@ -65,7 +65,7 @@ class searchController extends Controller
                 </a></div>';
                 }
             }else{
-                $output = ' ';
+                $output = 'لم يتم العثور على نتائج';
                 }
 
     //   $data = array(

@@ -19,12 +19,15 @@ class UtilsController extends Controller
         
         // return redirect()->route($route);
         $r=url()->previous();
-        if(str_contains($r, 'en')){
-            $n=str_replace('en/',$lang.'/',url()->previous());
-            return redirect()->to($n);
-        }else{
-            $n=str_replace('ar/',$lang.'/',url()->previous());
-            return redirect()->to($n);
-        }
+        
+            if(str_contains($r, 'en')){
+                $n=str_replace('/en','/'.$lang,$r);
+
+                return redirect()->to($n);
+            }else{
+                $n=str_replace('/ar','/'.$lang,$r);
+                return redirect()->to($n);
+            }
     }
+
 }
