@@ -36,7 +36,7 @@
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header bg-primary" dir="rtl">
+                <div class="modal-header bg-primary text-center" >
                   <p class="text-white"></p>
                   </div>
                   <div class="modal-body">

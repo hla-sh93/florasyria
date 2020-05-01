@@ -8148,7 +8148,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   font-family:"js-flat";
-  background: #fcfcfc;
+  background: #f8f8f8;
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
@@ -8416,7 +8416,7 @@ h1, h2, h3, h4, h5,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .7;
+    opacity: .5;
     background: #1566ad;
     background: -moz-linear-gradient(left, #1566ad 0%, #1b9de3 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #1566ad), color-stop(100%, #1b9de3));
