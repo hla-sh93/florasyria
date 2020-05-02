@@ -120,7 +120,9 @@
             
             </div>
           </div>
-
+          @if(isset($count))
+        <p> عدد النتائج : {{$count}}</p>
+          @endif
           @if(isset($species)) 
             <div class="row d-flex"> 
               @foreach ($species as $item)

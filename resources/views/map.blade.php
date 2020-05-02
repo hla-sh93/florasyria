@@ -36,8 +36,8 @@
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header bg-primary text-center" >
-                  <p class="text-white"></p>
+                <div class="modal-header bg-primary align-items-center justify-content-center" >
+                  <p class="text-white text-center"></p>
                   </div>
                   <div class="modal-body">
                   <img class="popup-img" src="" alt="">
