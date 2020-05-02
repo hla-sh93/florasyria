@@ -110,8 +110,9 @@ class advancedFilterController extends Controller
             }
             });
 
+            
             $data2 = $data2 ->groupBy('s.id')->orderBy('Gname')->get();
-
+            $count= $data2->count();
         // dd($data2);
         
         $lives=Life::all();
@@ -123,7 +124,8 @@ class advancedFilterController extends Controller
                                 'ecoValues' => $ecoValues,
                                 'areas' => $areas,
                                 'govs' => $govs,
-                                'species' => $data2
+                                'species' => $data2,
+                                'count' => $count
         ]);
     }
 }

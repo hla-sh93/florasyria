@@ -18,5 +18,11 @@
 .myImg:hover {opacity: 0.7;}
 
 .popup-img{
-  width: 100%;
+  width: 80%;
+  margin: 1px auto;
+  display: block;
+}
+
+.modal-header {
+  padding:1px;
 }
