@@ -30,13 +30,13 @@
 						<div class="wrap-about-border ftco-animate">
 							
 							@if($item->img =="")
-							<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" >
+							<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species['name']}} {{ $item->name}}" >
 							  @else 
-							 <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}">
+							 <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species['name']}} {{ $item->name}}">
 					   		@endif
 
 							<div class="text">
-								<h3>{{$item->species->name}} {{ $item->name}}</h3>
+								<h3>{{$item->species['name']}} {{ $item->name}}</h3>
 								<p>{{ substr($item->desc,0,200 ) }} ...</p>
 								<p><a href="{{ route('details',[app()->getLocale(), $item->id] )}}" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
 							</div>
@@ -53,15 +53,15 @@
                             <div class="row">
                                 <div class="col-md-3 col-sm-6 align-items-center d-flex justify-content-center">
 									@if ($item->img == "")
-										<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
+										<img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species['name']}} {{ $item->name}}" width="90px" height="90px">
 									@else
-										<img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" width="90px" height="90px">
+										<img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species['name']}} {{ $item->name}}" width="90px" height="90px">
 									@endif
                                 </div>
                                 <div class="col-md-8 col-sm-6">
                                     <div class="row">
                                         <div class="col-md-12">
-										<h5 class="card-title blue card_title mr-0 mt-0">{{$item->species->name}} {{ $item->name}}</h5>
+										<h5 class="card-title blue card_title mr-0 mt-0">{{$item->species['name']}} {{ $item->name}}</h5>
                                         </div>
 									</div>
 									<div class="row">
