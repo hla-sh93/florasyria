@@ -19,9 +19,8 @@
             <div class="row d-flex">
 
                 <div class="col-md-12 wrap-about pr-md-4 ftco-animate">
-                    <h2 class="mb-4">فريق العمل</h2>
-                    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                        إذا كنت تحتاج إلى عدد أكبر</p>
+                    <h2 class="mb-4">{{__('Our Team')}}</h2>
+                    <p>{{__('teamheading')}}</p>
                     <div class="row mt-5">
                         @foreach ($teams as $team)
                        <div class="col-lg-6">

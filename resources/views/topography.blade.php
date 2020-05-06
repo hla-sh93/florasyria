@@ -145,7 +145,7 @@
                 </div>
                 <?php $file = (json_decode($itme->file))[0]->download_link; ?>
                 <a href="{{Voyager::image( $file ) }}" target="_blank" class="mx-auto d-block">
-                <button class="btn btn-primary py-3 px-5 mx-auto d-block">{{__('attachement')}}</button>
+                <button class="btn btn-primary py-1 px-3">{{__('attachement')}}</button>
                 </a>
                 @endforeach 
             </div> <br> <br>

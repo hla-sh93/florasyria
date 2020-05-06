@@ -137,12 +137,12 @@
                     @if($item->img == "") 
                         <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->species->name}} {{ $item->name}}" height="200px" width="200px" class="m-2 mx-auto d-block">
                     @else 
-                        <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" class="myImg" data-title="{{ $item->img_title}}">
+                        <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->species->name}} {{ $item->name}}" class="myImg" data-title="{{ $item->image_title}}">
                     @endif
 
                     @if($item->imgs !="")
                         @foreach (json_decode($item->imgs,true) as $im)
-                        <img src="{{Voyager::image( $im ) }}" class="myImg" data-title="{{ $item->img_title}}" alt="{{$item->species->name}} {{ $item->name}}">
+                        <img src="{{Voyager::image( $im ) }}" class="myImg" data-title="{{ $item->image_title}}" alt="{{$item->species->name}} {{ $item->name}}">
                         @endforeach 
                         @endif
                         <!-- Modal -->
