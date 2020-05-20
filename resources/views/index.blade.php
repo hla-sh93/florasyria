@@ -36,7 +36,7 @@
 					   		@endif
 
 							<div class="text">
-								<h3>{{$item->species['name']}} {{ $item->name}}</h3>
+								<h3>{{$item->species['name']}} {{ $item->name}} {{ $item->auther}}</h3>
 								<p>{{ substr($item->desc,0,200 ) }} ...</p>
 								<p><a href="{{ route('details',[app()->getLocale(), $item->id] )}}" class="btn btn-primary py-2 px-4">متابعة القراءة</a></p>
 							</div>
@@ -61,7 +61,7 @@
                                 <div class="col-md-8 col-sm-6">
                                     <div class="row">
                                         <div class="col-md-12">
-										<h5 class="card-title blue card_title mr-0 mt-0">{{$item->species['name']}} {{ $item->name}}</h5>
+										<h5 class="card-title blue card_title mr-0 mt-0">{{$item->species['name']}} {{ $item->name}} {{ $item->auther}}</h5>
                                         </div>
 									</div>
 									<div class="row">

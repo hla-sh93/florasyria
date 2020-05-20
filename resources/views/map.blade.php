@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'Floram Map')
+@section('title', 'Flora Map')
     @section('content')
     <section class="hero-wrap hero-wrap-2" @if($header !="") style="background-image:url('{{Voyager::image($header)}}')" @else style="background-image: url('/images/bg_1.jpg');" @endif>
         <div class="overlay"></div>
@@ -17,14 +17,14 @@
 <section class="ftco-section">
     <div class="container">
       <div class="row">
-      <div class="col-md-4"> <span style="color:#59CA75"> عدد الأنواع المدخلة : </span> <span> {{ $species}}</span></div>
-      <div class="col-md-4"> <span style="color:#59CA75"> عدد الأجناس المدخلة : </span> <span> {{ $genus}}</span></div>
-      <div class="col-md-4"> <span style="color:#59CA75"> عدد العائلات المدخلة : </span> <span> {{ $families}}</span></div>
+      <div class="col-md-4"> <span style="color:#59CA75"> {{__('Total recorded species')}} : </span> <span> {{ $species}}</span></div>
+      <div class="col-md-4"> <span style="color:#59CA75"> {{__('Total recorded genera')}} </span> <span> {{ $genus}}</span></div>
+      <div class="col-md-4"> <span style="color:#59CA75"> {{__('Total recorded families')}} : </span> <span> {{ $families}}</span></div>
       </div><br><br>
       <div class="row">
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
           <h4> خرائط فلورا :</h4>
-        </div>
+        </div> -->
       </div>
 			<div class="row">
         @foreach ( $map as $im)

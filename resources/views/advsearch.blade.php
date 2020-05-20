@@ -50,7 +50,11 @@
                         <select class="form-control" id="life" name="life">
                           <option value=""> choose One ..</option>
                           @foreach ($lives as $life)
+                          @if(App::getLocale()=="ar")
                             <option value="{{$life->id}}">{{$life->ar_name}}</option>
+                          @else
+                            <option value="{{$life->id}}">{{$life->en_name}}</option>
+                          @endif
                           @endforeach
                         </select>
                       </div>
@@ -141,7 +145,7 @@
                               <div class="col-md-8 col-sm-6">
                                   <div class="row">
                                       <div class="col-md-12">
-                                          <h5 class="card-title blue card_title mr-0 mt-0">{{$item->Gname}} {{ $item->name}}</h5>
+                                          <h5 class="card-title blue card_title mr-0 mt-0">{{$item->Gname}} {{ $item->name}} {{ $item->auther}}</h5>
                                       </div>
                                   </div>
                                   <div class="row">

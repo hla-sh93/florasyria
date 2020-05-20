@@ -18,8 +18,7 @@
         <div class="container">
             <div class="col-md-12 ftco-animate">
                 <h2 class="mb-4">{{__('Published Articles')}}</h2>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                    إذا كنت تحتاج إلى عدد أكبر</p>
+                    <p>{{__('publicationHead')}}</p>
                 </div> <br>
                 <div class="col-md-10 offset-md-1 ftco-animate">
                 @foreach ($publications as $item)

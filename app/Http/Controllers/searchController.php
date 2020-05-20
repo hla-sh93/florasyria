@@ -46,12 +46,12 @@ class searchController extends Controller
                     <div class="card-body p-1">
                         <div class="row">
                             <div class="col-md-3 col-sm-6 align-items-center d-flex justify-content-center">
-                                <img src="'.$img.'" alt="'.$row->species->name.' ' .$row->name.'"  width="90px" height="90px">
+                                <img src="'.$img.'" alt="'.$row->species->name.' ' .$row->name.' '. $row->auther.'"  width="90px" height="90px">
                             </div>
                             <div class="col-md-8 col-sm-6">
                                 <div class="row">
                                     <div class="col-md-12">
-                                    <h5 class="card-title blue card_title mr-0 mt-0">'.$row->species->name.' '.$row->name.'</h5>
+                                    <h5 class="card-title blue card_title mr-0 mt-0">'.$row->species->name.' '.$row->name.' '.$row->auther.'</h5>
                                     </div>
                                 </div>
                                 <div class="row">
