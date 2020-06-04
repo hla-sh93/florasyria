@@ -22,7 +22,9 @@ class ContactFormController extends Controller
         ]);
 
         // Send e-mail
-        Mail::to('mchikh@scs-net.org')->send(new ContactFormMail($data));
-        return redirect('contact');
+        Mail::to('hla2-sh93@hotmail.com')->send(new ContactFormMail($data));
+        session()->flash('success','Thanks for contacting us');
+        $header=DB::table('header_images')->value('contact');
+        return view('contact.contact',['header'=> $header]);
     }
 }

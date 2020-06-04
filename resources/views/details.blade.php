@@ -125,9 +125,8 @@
                             <div class="col-md-12">
                                 @if( $item->reference_id !="")
                                 <h4>المراجع</h4>
-                                <p class="text-justify">
-                                    Reference:
-                                    <a href="{{$item->reference->source}}" target="_blank">{{$item->reference->title}}</a>
+                                <p class="">
+                                <a href="{{$item->reference->source}}" target="_blank">{{$item->reference->title}}</a> <span> By: {{$item->reference->author}} at {{$item->reference->year}}</span>
                                 </p>
                                 @endif 
                             </div>

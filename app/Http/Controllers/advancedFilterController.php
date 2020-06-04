@@ -75,7 +75,7 @@ class advancedFilterController extends Controller
 
         $data2 = DB::table('species As s')
         ->join('genera As gen', 'gen.id', '=', 's.genus_id')
-        ->select('s.id as id','s.name as name','s.img as img','s.desc As desc','gen.name As Gname')
+        ->select('s.id as id','s.name as name','s.img as img','s.desc As desc','gen.name As Gname','s.auther as auther')
         ->leftJoin('species_ecoval', 's.id', '=', 'species_ecoval.species_id')
         ->leftJoin('species_locations', 's.id', '=', 'species_locations.species_id')
         ->leftJoin('locations', 'locations.id', '=', 'species_locations.location_id')

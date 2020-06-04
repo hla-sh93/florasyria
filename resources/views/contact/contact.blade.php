@@ -44,6 +44,9 @@
           <div class="row block-9 justify-content-center mb-5">
             <div class="col-md-8 mb-md-5">
                 <h2 class="text-center">{{__('Or you can send us a message right here')}}</h2>
+                @if(session('success'))
+                  <div class="alert alert-success" > {{ session('success') }}</div>
+                @endif
             <form action="{{route('contact.store',app()->getLocale())}}" method="POST" class="bg-light p-5 contact-form">
                 @csrf
                 <div class="form-group">

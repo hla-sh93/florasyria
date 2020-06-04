@@ -139,13 +139,13 @@
                                 @if($item->img == "") 
                                 <img src="{{asset('images/defaul.jpg')}}" alt="{{$item->Gname}} {{ $item->name}}" class=" mx-auto d-block" width="100px">
                                 @else 
-                                <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->Gname}} {{ $item->name}}" class=" mx-auto d-block" width="100px">
+                                <img src="{{Voyager::image( $item->img ) }}" alt="{{$item->Gname}} {{ $item->name}}" class=" mx-auto d-block" width="100px" height="80px">
                                 @endif
                               </div>
                               <div class="col-md-8 col-sm-6">
                                   <div class="row">
                                       <div class="col-md-12">
-                                          <h5 class="card-title blue card_title mr-0 mt-0">{{$item->Gname}} {{ $item->name}} {{ $item->auther}}</h5>
+                                          <h5 class="card-title blue card_title mr-0 mt-0">{{$item->Gname}} {{ $item->name}} @if(isset($item->auther)){{ $item->auther}} @endif</h5>
                                       </div>
                                   </div>
                                   <div class="row">
